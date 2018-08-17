@@ -1,0 +1,25 @@
+<div *ngIf = "user">
+  <div class="container-fluid jumbotron settingsCard">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+      </div>
+      <div class="col-xs-12  col-md-6">
+        <h1 class="hovere"><legend>Update Settings</legend></h1>
+        <hr/>
+        <form (submit)="changeSetting()">
+          <div class="form-group">
+            <label for="password"> Password</label>
+            <input type="password" [(ngModel)]="password" class="form-control" name="password" id="password" maxlength="20" placeholder="Update Password" required >
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" [(ngModel)]="confirmPassword" class="form-control" name="confirmPassword" id="confirmPassword" maxlength="20" placeholder="Confirm Updated Password" required >
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-danger" value="Update">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

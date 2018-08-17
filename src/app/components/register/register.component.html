@@ -1,0 +1,25 @@
+<div class="jumbotron registerCard">
+<div class="row">
+  <div class="col-xs-12 col-md-3">
+  </div>
+  <div class="col-xs-12  col-md-6">
+    <h1 class="hovere"><legend>SignUp</legend></h1>
+    <hr/>
+    <form (submit)="onRegisterSubmit()">
+      <div class="form-group">
+        <label for="exampleInputcollegeId">Username</label>
+        <input type="text" [(ngModel)]="collegeId" name="collegeId" class="form-control" id="exampleInputcollegeId"  maxlength="14" placeholder="Enter College ID" required autofocus>
+        <small id="exampleInputcollegeId" class="form-text">Enter your college ID</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" [(ngModel)]="password" name="password" id="exampleInputPassword1" placeholder="Password" maxlength="20" required>
+        <small id="exampleInputPassword1" class="form-text">Your password is protetced with us.</small>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Sign In">
+      </div>
+    </form>
+  </div>
+</div>
+</div>
