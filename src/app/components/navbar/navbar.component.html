@@ -6,17 +6,12 @@
 
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
-      <div *ngIf="user">
-        <li class="nav-item" *ngIf="authService.loggedIn()"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-          <a class="nav-link" href="/" onmousedown="return false">Home <span class="sr-only">(current)</span></a>
-        </li>
-      </div>
       <li class="nav-item c" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link" href="profile" onmousedown="return false">Profile</a>
       </li>
       <div *ngIf="user">
         <li class="nav-item d" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-         <a class="nav-link" href="setting/{{user._id}}" onmousedown="return false">Settings</a>
+         <a class="nav-link" href="setting" onmousedown="return false">Settings</a>
         </li>
       </div>
     </ul>

@@ -21,7 +21,7 @@ const appRoutes: Routes = [
   { path : 'login' , component : LoginComponent},
   { path : 'activateUser' , component : ActivateAccountComponent},
   { path : 'profile' , component : ProfileComponent, canActivate: [AuthGuard]},
-  { path : 'setting/:id' , component : SettingComponent , canActivate: [AuthGuard]},
+  { path : 'setting' , component : SettingComponent , canActivate: [AuthGuard]},
 ]
 
 @NgModule({
