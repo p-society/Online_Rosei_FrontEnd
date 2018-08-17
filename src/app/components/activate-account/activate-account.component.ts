@@ -13,7 +13,7 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
 export class ActivateAccountComponent implements OnInit {
 
   constructor(
-    public router: Router,
+    private router: Router,
     private flashMessage: FlashMessagesService,
     private http: Http,
     private authService: AuthService,

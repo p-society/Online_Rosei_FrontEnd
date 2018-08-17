@@ -14,7 +14,10 @@ import { FlashMessagesModule } from 'angular2-flash-messages'
 import {AuthGuard} from './guards/auth.guard'
 import { ProfileComponent } from './components/profile/profile.component'
 import { SettingComponent } from './components/setting/setting.component';
-import { ActivateAccountComponent } from './components/activate-account/activate-account.component'
+import { ActivateAccountComponent } from './components/activate-account/activate-account.component';
+import { MessBookComponent } from './components/mess-book/mess-book.component'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
@@ -22,6 +25,7 @@ const appRoutes: Routes = [
   { path : 'activateUser' , component : ActivateAccountComponent},
   { path : 'profile' , component : ProfileComponent, canActivate: [AuthGuard]},
   { path : 'setting' , component : SettingComponent , canActivate: [AuthGuard]},
+  { path : 'bookCoupon' , component : MessBookComponent , canActivate: [AuthGuard]},
 ]
 
 @NgModule({
@@ -33,6 +37,7 @@ const appRoutes: Routes = [
     ProfileComponent,
     SettingComponent,
     ActivateAccountComponent,
+    MessBookComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,13 @@ const appRoutes: Routes = [
     HttpModule,
     FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    Ng4LoadingSpinnerModule.forRoot()
+    Ng4LoadingSpinnerModule.forRoot(),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

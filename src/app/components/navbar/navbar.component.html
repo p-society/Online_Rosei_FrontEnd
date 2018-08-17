@@ -9,6 +9,9 @@
       <li class="nav-item c" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link" href="profile" onmousedown="return false">Profile</a>
       </li>
+      <li class="nav-item d" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+       <a class="nav-link" href="bookCoupon" onmousedown="return false">Book Coupon</a>
+      </li>
       <div *ngIf="user">
         <li class="nav-item d" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
          <a class="nav-link" href="setting" onmousedown="return false">Settings</a>

@@ -1,0 +1,472 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <form (submit)="bookCoupon()" id="vegNon">
+
+        <!-- Ground Floor Mess -->
+        <div class="jumbotron">
+          <h1 style="color:white;">Mess 1 (ground Floor)</h1>
+          <hr>
+
+          <!-- Monday -->
+          <h4 style="color:white;">Monday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "monBrVegNon" [(ngModel)]="monBrVegNon" form="monBrVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "monLunVegNon" [(ngModel)]="monLunVegNon" form="monLunVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="monDinvegNon" [(ngModel)]="monDinvegNon" form="monDinvegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Tuesday -->
+          <h4 style="color:white;">Tuesday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "tuesBrVegNon" [(ngModel)]="tuesBrVegNon" form="tuesBrVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "tuesLunVegNon" [(ngModel)]="tuesLunVegNon" form="tuesLunVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="tuesDinvegNon" [(ngModel)]="tuesDinvegNon" form="tuesDinvegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Wednesday -->
+          <h4 style="color:white;">Wednesday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "wedBrVegNon" [(ngModel)]="wedBrVegNon" form="wedBrVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "wedLunVegNon" [(ngModel)]="wedLunVegNon" form="wedLunVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="wedDinvegNon" [(ngModel)]="wedDinvegNon" form="wedDinvegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Thursday -->
+          <h4 style="color:white;">Thursday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "thuBrVegNon" [(ngModel)]="thuBrVegNon" form="thuBrVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "thuLunVegNon" [(ngModel)]="thuLunVegNon" form="thuLunVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="thuDinvegNon" [(ngModel)]="thuDinvegNon" form="thuDinvegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Friday -->
+          <h4 style="color:white;">Friday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "friBrVegNon" [(ngModel)]="friBrVegNon" form="friBrVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "friLunVegNon" [(ngModel)]="friLunVegNon" form="friLunVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="friDinvegNon" [(ngModel)]="friDinvegNon" form="friDinvegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Saturday -->
+          <h4 style="color:white;">Saturday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "satBrVegNon" [(ngModel)]="satBrVegNon" form="satBrVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "satLunVegNon" [(ngModel)]="satLunVegNon" form="satLunVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="satDinvegNon" [(ngModel)]="satDinvegNon" form="satDinvegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Sunday -->
+          <h4 style="color:white;">Sunday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "sunBrVegNon" [(ngModel)]="sunBrVegNon" form="sunBrVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "sunLunVegNon" [(ngModel)]="sunLunVegNon" form="sunLunVegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="sunDinvegNon" [(ngModel)]="sunDinvegNon" form="sunDinvegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+        </div>
+
+
+        <!-- 1st Floor Mess -->
+        <div class="jumbotron">
+          <h1 style="color:white;">Mess 2 (1st Floor)</h1>
+          <hr>
+
+          <!-- Monday -->
+          <h4 style="color:white;">Monday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "monBrVegNon1" [(ngModel)]="monBrVegNon1" form="monBrVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "monLunVegNon1" [(ngModel)]="monLunVegNon1" form="monLunVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="monDinvegNon1" [(ngModel)]="monDinvegNon1" form="monDinvegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Tuesday -->
+          <h4 style="color:white;">Tuesday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "tuesBrVegNon1" [(ngModel)]="tuesBrVegNon1" form="tuesBrVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "tuesLunVegNon1" [(ngModel)]="tuesLunVegNon1" form="tuesLunVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="tuesDinvegNon1" [(ngModel)]="tuesDinvegNon1" form="tuesDinvegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Wednesday -->
+          <h4 style="color:white;">Wednesday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "wedBrVegNon1" [(ngModel)]="wedBrVegNon1" form="wedBrVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "wedLunVegNon1" [(ngModel)]="wedLunVegNon1" form="wedLunVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="wedDinvegNon" [(ngModel)]="wedDinvegNon" form="wedDinvegNon" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Thursday -->
+          <h4 style="color:white;">Thursday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "thuBrVegNon1" [(ngModel)]="thuBrVegNon1" form="thuBrVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "thuLunVegNon1" [(ngModel)]="thuLunVegNon1" form="thuLunVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="thuDinvegNon1" [(ngModel)]="thuDinvegNon1" form="thuDinvegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Friday -->
+          <h4 style="color:white;">Friday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "friBrVegNon1" [(ngModel)]="friBrVegNon1" form="friBrVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "friLunVegNon1" [(ngModel)]="friLunVegNon1" form="friLunVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="friDinvegNon1" [(ngModel)]="friDinvegNon1" form="friDinvegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Saturday -->
+          <h4 style="color:white;">Saturday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "satBrVegNon1" [(ngModel)]="satBrVegNon1" form="satBrVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "satLunVegNon1" [(ngModel)]="satLunVegNon1" form="satLunVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="satDinvegNon1" [(ngModel)]="satDinvegNon1" form="satDinvegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+          <!-- Sunday -->
+          <h4 style="color:white;">Sunday</h4>
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>BreakFast</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "sunBrVegNon1" [(ngModel)]="sunBrVegNon1" form="sunBrVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Lunch</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name = "sunLunVegNon1" [(ngModel)]="sunLunVegNon1" form="sunLunVegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Dinner</p>
+              <mat-form-field>
+                <mat-select placeholder="Veg/Non-Veg" name="sunDinvegNon1" [(ngModel)]="sunDinvegNon1" form="sunDinvegNon1" panelClass="example-panel-red">
+                  <mat-option value="veg">Veg</mat-option>
+                  <mat-option value="nonVeg">NonVeg</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div><br>
+
+        </div>
+        <input type="submit"  class="btn btn-success" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core'
 import {Router} from '@angular/router'
 import {FlashMessagesService} from 'angular2-flash-messages'
 import {AuthService} from '../../services/auth.service'
-import {Http , HttpModule} from '@angular/http'
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
 
 @Component({
