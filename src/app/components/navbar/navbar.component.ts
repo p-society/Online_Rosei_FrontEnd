@@ -16,9 +16,11 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(data => {
-      this.user = data.data.user
-    })
+    if (this.authService.loggedIn()) {
+      this.authService.getProfile().subscribe(data => {
+        this.user = data.data.user
+      })
+    }
   }
   onlogout() {
     this.authService.loggedOut()

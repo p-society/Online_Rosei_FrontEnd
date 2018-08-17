@@ -13,11 +13,13 @@ import { LoginComponent } from './components/login/login.component'
 import { FlashMessagesModule } from 'angular2-flash-messages'
 import {AuthGuard} from './guards/auth.guard'
 import { ProfileComponent } from './components/profile/profile.component'
-import { SettingComponent } from './components/setting/setting.component'
+import { SettingComponent } from './components/setting/setting.component';
+import { ActivateAccountComponent } from './components/activate-account/activate-account.component'
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
   { path : 'login' , component : LoginComponent},
+  { path : 'activateUser' , component : ActivateAccountComponent},
   { path : 'profile' , component : ProfileComponent, canActivate: [AuthGuard]},
   { path : 'setting/:id' , component : SettingComponent , canActivate: [AuthGuard]},
 ]
@@ -30,6 +32,7 @@ const appRoutes: Routes = [
     LoginComponent,
     ProfileComponent,
     SettingComponent,
+    ActivateAccountComponent,
   ],
   imports: [
     BrowserModule,

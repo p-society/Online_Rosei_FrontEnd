@@ -29,6 +29,13 @@ export class AuthService {
     .map(res => res.json())
   }
 
+  activateUser(data) {
+    const headers = new Headers()
+    headers.append('Content-Type', 'application/json')
+    return this.http.post('http://localhost:3000/user/activate' , data , {headers: headers})
+    .map(res => res.json())
+  }
+
   getProfile() {
     const headers = new Headers()
     this.loadToken()

@@ -44,8 +44,8 @@ onRegisterSubmit() {
       this.router.navigate(['/register'])
     } else if (data.data.success === true) {
       this.spinnerService.hide()
-      this.flashMessage.show('You can now login', {cssClass: 'alert-success', timeout: 5000})
-      this.router.navigate(['/'])
+      this.flashMessage.show('Please verify your collegeId with link sent to your college Email ID', {cssClass: 'alert-success', timeout: 5000})
+      this.router.navigate(['/login'])
     }
   })
 }
