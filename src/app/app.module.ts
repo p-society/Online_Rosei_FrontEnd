@@ -15,9 +15,10 @@ import {AuthGuard} from './guards/auth.guard'
 import { ProfileComponent } from './components/profile/profile.component'
 import { SettingComponent } from './components/setting/setting.component';
 import { ActivateAccountComponent } from './components/activate-account/activate-account.component';
-import { MessBookComponent } from './components/mess-book/mess-book.component'
+import { MessBookComponent, DialogComponent } from './components/mess-book/mess-book.component'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule
+  , MatInputModule, MatSelectModule, MatDialogModule} from '@angular/material';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
     SettingComponent,
     ActivateAccountComponent,
     MessBookComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +53,11 @@ const appRoutes: Routes = [
     MatCheckboxModule,
     MatInputModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ],
   providers: [AuthService, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[DialogComponent]
 })
 export class AppModule { }
