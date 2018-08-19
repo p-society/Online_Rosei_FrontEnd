@@ -1,8 +1,97 @@
-<h2 mat-dialog-title>Confirm your coupon</h2>
+<h2 mat-dialog-title style="color:white;text-align: center;">Confirm your coupon
+</h2>
+<p style="color:white;">Mess 1(ground Floor)</p>
 <mat-dialog-content class="mat-typography">
-  {{data.mess1.breakfastMess1.Monday}}
+  <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container matColumnDef="day">
+      <th mat-header-cell *matHeaderCellDef> Day </th>
+      <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+      <td mat-footer-cell *matFooterCellDef> Total </td>
+    </ng-container>
+
+    <ng-container matColumnDef="breakfast">
+      <th mat-header-cell *matHeaderCellDef> BreakFast </th>
+      <td mat-cell *matCellDef="let element"> {{element.breakfast}} </td>
+      <td mat-footer-cell *matFooterCellDef>  </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="lunch">
+      <th mat-header-cell *matHeaderCellDef> Lunch </th>
+      <td mat-cell *matCellDef="let element"> {{element.lunch}} </td>
+      <td mat-footer-cell *matFooterCellDef>  </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="dinner">
+      <th mat-header-cell *matHeaderCellDef> Dinner </th>
+      <td mat-cell *matCellDef="let element"> {{element.dinner}} </td>
+      <td mat-footer-cell *matFooterCellDef>  </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cost">
+    <th mat-header-cell *matHeaderCellDef> Cost </th>
+    <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+    <td mat-footer-cell *matFooterCellDef> {{getTotalCostMess1()}} </td>
+  </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+  </table>
+
+  <!-- Mess 2 -->
+
+  <br><br>
+  <p style="color:white;">Mess 2(1st Floor)</p>
+  <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container matColumnDef="day">
+      <th mat-header-cell *matHeaderCellDef> Day </th>
+      <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+      <td mat-footer-cell *matFooterCellDef> Total </td>
+    </ng-container>
+
+    <ng-container matColumnDef="breakfast">
+      <th mat-header-cell *matHeaderCellDef> BreakFast </th>
+      <td mat-cell *matCellDef="let element"> {{element.breakfast}} </td>
+      <td mat-footer-cell *matFooterCellDef>  </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="lunch">
+      <th mat-header-cell *matHeaderCellDef> Lunch </th>
+      <td mat-cell *matCellDef="let element"> {{element.lunch}} </td>
+      <td mat-footer-cell *matFooterCellDef>  </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="dinner">
+      <th mat-header-cell *matHeaderCellDef> Dinner </th>
+      <td mat-cell *matCellDef="let element"> {{element.dinner}} </td>
+      <td mat-footer-cell *matFooterCellDef>  </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cost">
+    <th mat-header-cell *matHeaderCellDef> Cost </th>
+    <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+    <td mat-footer-cell *matFooterCellDef> {{getTotalCostMess2()}} </td>
+  </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+  </table>
+
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Confirm</button>
 </mat-dialog-actions>

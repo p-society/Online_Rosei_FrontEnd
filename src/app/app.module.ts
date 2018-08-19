@@ -18,7 +18,7 @@ import { ActivateAccountComponent } from './components/activate-account/activate
 import { MessBookComponent, DialogComponent } from './components/mess-book/mess-book.component'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule
-  , MatInputModule, MatSelectModule, MatDialogModule} from '@angular/material';
+  , MatInputModule, MatSelectModule, MatDialogModule, MatTableModule} from '@angular/material';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
@@ -54,7 +54,8 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
