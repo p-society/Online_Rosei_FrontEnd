@@ -366,7 +366,9 @@ export class MessBookComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog closed: ${result}`);
       if(result) {
-        console.log("fuck")
+        this.authService.bookCoupon(body).subscribe(data=>{
+          console.log(data)
+        })
       }
     });
 

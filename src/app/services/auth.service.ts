@@ -56,6 +56,16 @@ export class AuthService {
     .map(res => res.json())
   }
 
+  bookCoupon(data) {
+    const headers = new Headers()
+    this.loadToken()
+    const userId = this.loadUserInfo()._id
+    headers.append('x-access-token', this.authToken)
+    headers.append('Content-Type', 'application/json')
+    return this.http.post('http://localhost:3000/book/bookCoupon/'+ userId, data, {headers: headers})
+    .map(res => res.json())
+  }
+
   storeUserData(token , user) {
     localStorage.setItem('token-id', token)
     localStorage.setItem('user', JSON.stringify(user))
