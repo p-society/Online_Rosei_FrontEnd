@@ -1,470 +1,406 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-12">
+
       <form (submit)="bookCoupon()" id="vegNon">
+        <mat-accordion class="example-headers-align">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mess1 (Ground Floor)
+              </mat-panel-title>
+              <mat-panel-description>
+                Press this to toggle
+              </mat-panel-description>
+            </mat-expansion-panel-header>
 
-        <!-- Ground Floor Mess -->
-        <div class="jumbotron">
-          <h1 style="color:white;">Mess 1 (ground Floor)</h1>
-          <hr>
+            <!-- Ground Floor Mess -->
+            <div class="jumbotron">
+              <!-- Monday -->
+              <h4 style="color:white;">Monday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                    <mat-radio-group [(ngModel)]="monBrVegNon" name = "monBrVegNon"  form="monBrVegNon">
+                      <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                      <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "monLunVegNon" [(ngModel)]="monLunVegNon" form="monLunVegNon" >
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="monDinvegNon" [(ngModel)]="monDinvegNon" form="monDinvegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Monday -->
-          <h4 style="color:white;">Monday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "monBrVegNon" [(ngModel)]="monBrVegNon" form="monBrVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "monLunVegNon" [(ngModel)]="monLunVegNon" form="monLunVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="monDinvegNon" [(ngModel)]="monDinvegNon" form="monDinvegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Tuesday -->
+              <h4 style="color:white;">Tuesday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "tuesBrVegNon" [(ngModel)]="tuesBrVegNon" form="tuesBrVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "tuesLunVegNon" [(ngModel)]="tuesLunVegNon" form="tuesLunVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="tuesDinvegNon" [(ngModel)]="tuesDinvegNon" form="tuesDinvegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Tuesday -->
-          <h4 style="color:white;">Tuesday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "tuesBrVegNon" [(ngModel)]="tuesBrVegNon" form="tuesBrVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "tuesLunVegNon" [(ngModel)]="tuesLunVegNon" form="tuesLunVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="tuesDinvegNon" [(ngModel)]="tuesDinvegNon" form="tuesDinvegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Wednesday -->
+              <h4 style="color:white;">Wednesday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "wedBrVegNon" [(ngModel)]="wedBrVegNon" form="wedBrVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "wedLunVegNon" [(ngModel)]="wedLunVegNon" form="wedLunVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="wedDinvegNon" [(ngModel)]="wedDinvegNon" form="wedDinvegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Wednesday -->
-          <h4 style="color:white;">Wednesday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "wedBrVegNon" [(ngModel)]="wedBrVegNon" form="wedBrVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "wedLunVegNon" [(ngModel)]="wedLunVegNon" form="wedLunVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="wedDinvegNon" [(ngModel)]="wedDinvegNon" form="wedDinvegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Thursday -->
+              <h4 style="color:white;">Thursday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "thuBrVegNon" [(ngModel)]="thuBrVegNon" form="thuBrVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "thuLunVegNon" [(ngModel)]="thuLunVegNon" form="thuLunVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="thuDinvegNon" [(ngModel)]="thuDinvegNon" form="thuDinvegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Thursday -->
-          <h4 style="color:white;">Thursday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "thuBrVegNon" [(ngModel)]="thuBrVegNon" form="thuBrVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "thuLunVegNon" [(ngModel)]="thuLunVegNon" form="thuLunVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="thuDinvegNon" [(ngModel)]="thuDinvegNon" form="thuDinvegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Friday -->
+              <h4 style="color:white;">Friday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "friBrVegNon" [(ngModel)]="friBrVegNon" form="friBrVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "friLunVegNon" [(ngModel)]="friLunVegNon" form="friLunVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="friDinvegNon" [(ngModel)]="friDinvegNon" form="friDinvegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Friday -->
-          <h4 style="color:white;">Friday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "friBrVegNon" [(ngModel)]="friBrVegNon" form="friBrVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "friLunVegNon" [(ngModel)]="friLunVegNon" form="friLunVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="friDinvegNon" [(ngModel)]="friDinvegNon" form="friDinvegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Saturday -->
+              <h4 style="color:white;">Saturday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "satBrVegNon" [(ngModel)]="satBrVegNon" form="satBrVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "satLunVegNon" [(ngModel)]="satLunVegNon" form="satLunVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="satDinvegNon" [(ngModel)]="satDinvegNon" form="satDinvegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Saturday -->
-          <h4 style="color:white;">Saturday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "satBrVegNon" [(ngModel)]="satBrVegNon" form="satBrVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "satLunVegNon" [(ngModel)]="satLunVegNon" form="satLunVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="satDinvegNon" [(ngModel)]="satDinvegNon" form="satDinvegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Sunday -->
+              <h4 style="color:white;">Sunday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "sunBrVegNon" [(ngModel)]="sunBrVegNon" form="sunBrVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "sunLunVegNon" [(ngModel)]="sunLunVegNon" form="sunLunVegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name = "sunDinvegNon" [(ngModel)]="sunDinvegNon" form="sunDinvegNon">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Sunday -->
-          <h4 style="color:white;">Sunday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "sunBrVegNon" [(ngModel)]="sunBrVegNon" form="sunBrVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "sunLunVegNon" [(ngModel)]="sunLunVegNon" form="sunLunVegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="sunDinvegNon" [(ngModel)]="sunDinvegNon" form="sunDinvegNon" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+          </mat-expansion-panel>
 
-        </div>
+          <br><br>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mess 2 (First floor)
+              </mat-panel-title>
+              <mat-panel-description>
+                Press this to toggle
+              </mat-panel-description>
+            </mat-expansion-panel-header>
 
+            <!-- 1st Floor Mess -->
+            <div class="jumbotron">
+              <!-- Monday -->
+              <h4 style="color:white;">Monday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                    <mat-radio-group [(ngModel)]="monBrVegNon1" name = "monBrVegNon1"  form="monBrVegNon1">
+                      <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                      <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "monLunVegNon1" [(ngModel)]="monLunVegNon1" form="monLunVegNon1" >
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="monDinvegNon1" [(ngModel)]="monDinvegNon1" form="monDinvegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-        <!-- 1st Floor Mess -->
-        <div class="jumbotron">
-          <h1 style="color:white;">Mess 2 (1st Floor)</h1>
-          <hr>
+              <!-- Tuesday -->
+              <h4 style="color:white;">Tuesday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "tuesBrVegNon1" [(ngModel)]="tuesBrVegNon1" form="tuesBrVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "tuesLunVegNon1" [(ngModel)]="tuesLunVegNon1" form="tuesLunVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="tuesDinvegNon1" [(ngModel)]="tuesDinvegNon1" form="tuesDinvegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Monday -->
-          <h4 style="color:white;">Monday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "monBrVegNon1" [(ngModel)]="monBrVegNon1" form="monBrVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "monLunVegNon1" [(ngModel)]="monLunVegNon1" form="monLunVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="monDinvegNon1" [(ngModel)]="monDinvegNon1" form="monDinvegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Wednesday -->
+              <h4 style="color:white;">Wednesday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "wedBrVegNon1" [(ngModel)]="wedBrVegNon1" form="wedBrVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "wedLunVegNon1" [(ngModel)]="wedLunVegNon1" form="wedLunVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="wedDinvegNon1" [(ngModel)]="wedDinvegNon1" form="wedDinvegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Tuesday -->
-          <h4 style="color:white;">Tuesday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "tuesBrVegNon1" [(ngModel)]="tuesBrVegNon1" form="tuesBrVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "tuesLunVegNon1" [(ngModel)]="tuesLunVegNon1" form="tuesLunVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="tuesDinvegNon1" [(ngModel)]="tuesDinvegNon1" form="tuesDinvegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Thursday -->
+              <h4 style="color:white;">Thursday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "thuBrVegNon1" [(ngModel)]="thuBrVegNon1" form="thuBrVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "thuLunVegNon1" [(ngModel)]="thuLunVegNon1" form="thuLunVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="thuDinvegNon1" [(ngModel)]="thuDinvegNon1" form="thuDinvegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Wednesday -->
-          <h4 style="color:white;">Wednesday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "wedBrVegNon1" [(ngModel)]="wedBrVegNon1" form="wedBrVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "wedLunVegNon1" [(ngModel)]="wedLunVegNon1" form="wedLunVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="wedDinvegNon1" [(ngModel)]="wedDinvegNon1" form="wedDinvegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Friday -->
+              <h4 style="color:white;">Friday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "friBrVegNon1" [(ngModel)]="friBrVegNon1" form="friBrVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "friLunVegNon1" [(ngModel)]="friLunVegNon1" form="friLunVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="friDinvegNon1" [(ngModel)]="friDinvegNon1" form="friDinvegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Thursday -->
-          <h4 style="color:white;">Thursday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "thuBrVegNon1" [(ngModel)]="thuBrVegNon1" form="thuBrVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "thuLunVegNon1" [(ngModel)]="thuLunVegNon1" form="thuLunVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="thuDinvegNon1" [(ngModel)]="thuDinvegNon1" form="thuDinvegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Saturday -->
+              <h4 style="color:white;">Saturday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "satBrVegNon1" [(ngModel)]="satBrVegNon1" form="satBrVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "satLunVegNon1" [(ngModel)]="satLunVegNon1" form="satLunVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="satDinvegNon1" [(ngModel)]="satDinvegNon1" form="satDinvegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Friday -->
-          <h4 style="color:white;">Friday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "friBrVegNon1" [(ngModel)]="friBrVegNon1" form="friBrVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "friLunVegNon1" [(ngModel)]="friLunVegNon1" form="friLunVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="friDinvegNon1" [(ngModel)]="friDinvegNon1" form="friDinvegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
+              <!-- Sunday -->
+              <h4 style="color:white;">Sunday</h4>
+              <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "sunBrVegNon1" [(ngModel)]="sunBrVegNon1" form="sunBrVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "sunLunVegNon1" [(ngModel)]="sunLunVegNon1" form="sunLunVegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name = "sunDinvegNon1" [(ngModel)]="sunDinvegNon1" form="sunDinvegNon1">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div><br>
 
-          <!-- Saturday -->
-          <h4 style="color:white;">Saturday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "satBrVegNon1" [(ngModel)]="satBrVegNon1" form="satBrVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
             </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "satLunVegNon1" [(ngModel)]="satLunVegNon1" form="satLunVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="satDinvegNon1" [(ngModel)]="satDinvegNon1" form="satDinvegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
-
-          <!-- Sunday -->
-          <h4 style="color:white;">Sunday</h4>
-          <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>BreakFast</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "sunBrVegNon1" [(ngModel)]="sunBrVegNon1" form="sunBrVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Lunch</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name = "sunLunVegNon1" [(ngModel)]="sunLunVegNon1" form="sunLunVegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <p>Dinner</p>
-              <mat-form-field>
-                <mat-select placeholder="select food" name="sunDinvegNon1" [(ngModel)]="sunDinvegNon1" form="sunDinvegNon1" panelClass="example-panel-red">
-                  <mat-option value="veg">Veg</mat-option>
-                  <mat-option value="nonVeg">NonVeg</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div><br>
-
-        </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br><br>
         <input type="submit"  class="btn btn-success" value="Submit">
       </form>
     </div>

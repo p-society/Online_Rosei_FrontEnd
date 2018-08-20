@@ -4,6 +4,8 @@ import {Router} from '@angular/router'
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 import {AuthService} from '../../services/auth.service'
 import {MatTableModule} from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
 
 @Component({
   selector: 'app-mess-book',
@@ -17,7 +19,7 @@ export class MessBookComponent implements OnInit {
   monDinvegNon: String;
   tuesBrVegNon: String;
   tuesLunVegNon: String;
-  tuesDinVegNon: String;
+  tuesDinvegNon: String;
   wedBrVegNon: String;
   wedLunVegNon: String;
   wedDinvegNon: String;
@@ -35,13 +37,12 @@ export class MessBookComponent implements OnInit {
   sunDinvegNon: String;
 
   // 1st floor mess1
-
   monBrVegNon1 : String;
   monLunVegNon1 : String;
   monDinvegNon1: String;
   tuesBrVegNon1: String;
   tuesLunVegNon1: String;
-  tuesDinVegNon1: String;
+  tuesDinvegNon1: String;
   wedBrVegNon1: String;
   wedLunVegNon1: String;
   wedDinvegNon1: String;
@@ -85,7 +86,6 @@ export class MessBookComponent implements OnInit {
     const lunchMess2 = {};
     const dinnerMess2 = {};
     // mess 1
-
       arrMess1.push({
         breakfast: {
           monBrVegNon: this.monBrVegNon,
@@ -107,7 +107,7 @@ export class MessBookComponent implements OnInit {
         },
         dinner: {
           monDinvegNon: this.monDinvegNon,
-          tuesDinVegNon: this.tuesDinVegNon,
+          tuesDinVegNon: this.tuesDinvegNon,
           wedDinvegNon: this.wedDinvegNon,
           thuDinvegNon: this.thuDinvegNon,
           friDinvegNon: this.friDinvegNon,
@@ -138,7 +138,7 @@ export class MessBookComponent implements OnInit {
         },
         dinner: {
           monDinvegNon: this.monDinvegNon1,
-          tuesDinVegNon: this.tuesDinVegNon1,
+          tuesDinVegNon: this.tuesDinvegNon1,
           wedDinvegNon: this.wedDinvegNon1,
           thuDinvegNon: this.thuDinvegNon1,
           friDinvegNon: this.friDinvegNon1,
