@@ -29,6 +29,13 @@ export class AuthService {
     .map(res => res.json())
   }
 
+  authenticateAdmin(admin){
+    const headers = new Headers()
+    headers.append('Content-Type', 'application/json')
+    return this.http.post('http://localhost:3000/admin/login', admin , {headers: headers})
+    .map(res => res.json())
+  }
+
   activateUser(data) {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
@@ -44,6 +51,17 @@ export class AuthService {
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
     return this.http.get('http://localhost:3000/user/profile/' + userId, {headers: headers})
+    .map(res => res.json())
+  }
+
+  // get ground floor users for admin
+  getUsersMessDown() {
+    const headers = new Headers()
+    this.loadToken()
+    const adminId = this.loadUserInfo()._id
+    headers.append('x-access-token', this.authToken)
+    headers.append('Content-Type', 'application/json')
+    return this.http.get('http://localhost:3000/admin/mess1/all/' + adminId, {headers: headers})
     .map(res => res.json())
   }
 

@@ -84,6 +84,11 @@ export class MessBookComponent implements OnInit {
         this.router.navigate(['/profile'])
       }
     })
+
+    const Info =this.authService.loadUserInfo();
+    if (Info.userType === "admin") {
+      this.router.navigate(['/'])
+    }
   }
 
   bookCoupon(){

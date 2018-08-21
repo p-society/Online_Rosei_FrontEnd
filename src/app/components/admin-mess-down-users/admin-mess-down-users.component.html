@@ -1,0 +1,52 @@
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Mess1 Booked coupons (Ground Floor)
+      </mat-panel-title>
+      <mat-panel-description>
+        Press this to toggle
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div *ngIf="messDown">
+    <button mat-flat-button color="warn" (click)="print()">Print Coupons</button>
+    <div id="print-section">
+    <!-- Ground Floor Mess -->
+
+    <div>
+      <h2 style="color:black;text-align:center;">Mess 1(Ground Floor)</h2>
+      <div *ngFor="let val of messDown">
+        <table class="table" style="color:black">
+            <thead>
+                <h5>{{val.collegeId}}</h5>
+                <h5>{{val.name}}</h5>
+                <tr>
+                    <td>Day</td>
+                    <td>BreakFast</td>
+                    <td>Lunch</td>
+                    <td>Dinner</td>
+                </tr>
+            </thead>
+            <tbody>
+                <div *ngFor="let result of val.couponDownMess">
+                  <tr *ngFor="let final of result.messdown">
+                    <td>{{final.day}}</td>
+                    <td>{{final.breakfast}}</td>
+                    <td>{{final.lunch}}</td>
+                    <td>{{final.dinner}}</td>
+                  </tr>
+                </div>
+            </tbody>
+        </table>
+      </div>
+
+    </div>
+    </div>
+    </div>
+    <!-- if no coupon-->
+    <div *ngIf="message">
+      <p style="color:white">{{message}}</p>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

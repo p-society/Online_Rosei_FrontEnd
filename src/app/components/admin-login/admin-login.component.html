@@ -1,0 +1,15 @@
+<div class="jumbotron loginCard">
+  <h1 class="hovere">Login</h1>
+  <form (submit)="onLoginSubmit()">
+    <div class="form-group">
+      <label>Your Email</label>
+      <input type="text" [(ngModel)]="email" name="email" class="form-control" required autofocus placeholder="Enter your Email">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Enter your password" required>
+    </div>
+    <input type="submit" class="btn btn-primary btn-lg" value="Login">
+  </form>
+</div>

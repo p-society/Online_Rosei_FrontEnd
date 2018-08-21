@@ -11,7 +11,7 @@ import { RegisterComponent } from './components/register/register.component'
 import {AuthService} from './services/auth.service'
 import { LoginComponent } from './components/login/login.component'
 import { FlashMessagesModule } from 'angular2-flash-messages'
-import {AuthGuard} from './guards/auth.guard'
+import {AuthGuard} from './guards'
 import { ProfileComponent } from './components/profile/profile.component'
 import { SettingComponent } from './components/setting/setting.component';
 import { ActivateAccountComponent } from './components/activate-account/activate-account.component';
@@ -20,14 +20,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule
   , MatInputModule, MatSelectModule, MatDialogModule, MatTableModule
   , MatExpansionModule, MatRadioModule} from '@angular/material';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminMessDownComponent } from './components/admin-mess-down/admin-mess-down.component';
+import { AdminMessDownUsersComponent } from './components/admin-mess-down-users/admin-mess-down-users.component';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
   { path : 'login' , component : LoginComponent},
+  { path : 'adminLogin' , component : AdminLoginComponent},
   { path : 'activateUser' , component : ActivateAccountComponent},
   { path : 'profile' , component : ProfileComponent, canActivate: [AuthGuard]},
   { path : 'setting' , component : SettingComponent , canActivate: [AuthGuard]},
   { path : 'bookCoupon' , component : MessBookComponent , canActivate: [AuthGuard]},
+  { path : 'adminMess1' , component : AdminMessDownComponent , canActivate: [AuthGuard]},
+  { path : 'adminMess1Users' , component : AdminMessDownUsersComponent , canActivate: [AuthGuard]},
 ]
 
 @NgModule({
@@ -40,7 +46,10 @@ const appRoutes: Routes = [
     SettingComponent,
     ActivateAccountComponent,
     MessBookComponent,
-    DialogComponent
+    DialogComponent,
+    AdminLoginComponent,
+    AdminMessDownComponent,
+    AdminMessDownUsersComponent
   ],
   imports: [
     BrowserModule,

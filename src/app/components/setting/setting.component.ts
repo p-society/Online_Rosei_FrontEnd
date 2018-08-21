@@ -30,6 +30,11 @@ export class SettingComponent implements OnInit {
       this.spinnerService.hide()
       this.user = data.data.user
     })
+
+    const Info =this.authService.loadUserInfo();
+    if (Info.userType === "admin") {
+      this.router.navigate(['/'])
+    }
   }
 
   changeSetting() {
