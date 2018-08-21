@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
    collegeId: String;
    password: String;
    sex: String;
+   name: String;
 
   constructor(
     private router: Router,
@@ -38,7 +39,8 @@ onRegisterSubmit() {
   const user = {
     collegeId : this.collegeId,
     password : this.password,
-    sex: this.sex
+    sex: this.sex,
+    name: this.name
   }
   this.authService.registerUser(user).subscribe(data => {
     if (data.data.success === false ) {

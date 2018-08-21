@@ -7,13 +7,18 @@
     <hr/>
     <form (submit)="onRegisterSubmit()">
       <div class="form-group">
-        <label for="exampleInputcollegeId">Username</label>
+        <label for="exampleInputcollegeId">College ID</label>
         <input type="text" [(ngModel)]="collegeId" name="collegeId" class="form-control" id="exampleInputcollegeId"  maxlength="14" placeholder="Enter College ID" required autofocus>
         <small id="exampleInputcollegeId" class="form-text">Enter your college ID</small>
       </div>
       <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" [(ngModel)]="name" name="name" class="form-control" id="exampleInputcollegeId"  maxlength="40" placeholder="Enter your name" required>
+        <small id="exampleInputName" class="form-text">Enter your Name</small>
+      </div>
+      <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" [(ngModel)]="password" name="password" id="exampleInputPassword1" placeholder="Password" maxlength="20" required>
+        <input type="password" class="form-control" [(ngModel)]="password" name="password" id="exampleInputPassword1" placeholder="Password" maxlength="40" required>
         <small id="exampleInputPassword1" class="form-text">Your password is protetced with us.</small>
       </div>
       <mat-radio-group name="sex" [(ngModel)]="sex" form="sex">

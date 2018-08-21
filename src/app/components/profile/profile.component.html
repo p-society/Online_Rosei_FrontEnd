@@ -24,8 +24,10 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
 
+      <div *ngIf="messDown">
       <!-- Ground Floor Mess -->
       <div class="jumbotron">
+        <h3>Booked on:- {{bookedDate}}</h3>
         <table mat-table [dataSource]="messDown" class="mat-elevation-z8">
 
           <!--- Note that these columns can be defined in any order.
@@ -69,7 +71,13 @@
         </table>
 
       </div>
+      </div>
+      <!-- if no coupon-->
+      <div *ngIf="message">
+        <p style="color:white">{{message}}</p>
+      </div>
     </mat-expansion-panel>
+
 
     <br><br>
     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -83,8 +91,10 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
 
+      <div *ngIf="messUp">
       <!-- 1st Floor Mess -->
       <div class="jumbotron">
+        <h3>Booked on:- {{bookedDate}}</h3>
         <table mat-table [dataSource]="messUp" class="mat-elevation-z8">
 
           <!--- Note that these columns can be defined in any order.
@@ -126,6 +136,12 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
         </table>
+      </div>
+      </div>
+
+      <!-- if no coupon-->
+      <div *ngIf="message">
+        <p style="color:white">{{message}}</p>
       </div>
     </mat-expansion-panel>
   </mat-accordion>

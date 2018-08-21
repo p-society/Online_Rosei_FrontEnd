@@ -20,6 +20,8 @@ export class ProfileComponent implements OnInit {
   displayedColumns: any;
   costDown: any;
   costUp: any;
+  message: string;
+  bookedDate: string;
 
   constructor(
     private router: Router,
@@ -37,11 +39,17 @@ export class ProfileComponent implements OnInit {
     })
 
     this.authService.getCoupon().subscribe(data => {
-      this.displayedColumns = ['day','breakfast', 'lunch', 'dinner', 'cost'];
-      this.messDown= data.data.bookedCoupon.messdown
-      this.messUp = data.data.bookedCoupon.messup
-      this.costDown = this.messDown.map(t => t.cost).reduce((acc, value) => acc + value, 0);
-      this.costUp = this.messUp.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+      console.log(data.data)
+        if (data.data.success) {
+          this.displayedColumns = ['day','breakfast', 'lunch', 'dinner', 'cost'];
+          this.messDown= data.data.bookedCouponDown.messdown
+          this.messUp = data.data.bookedCouponUp.messup
+          this.costDown = this.messDown.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+          this.costUp = this.messUp.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+          this.bookedDate = data.data.bookedCouponUp.createdAt || data.data.bookedCouponDown.createdAt;
+        } else {
+          this.message = data.message
+        }
     })
   }
 }
