@@ -4,6 +4,7 @@ import {FlashMessagesService} from 'angular2-flash-messages'
 import {AuthService} from '../../services/auth.service'
 import {Http , HttpModule} from '@angular/http'
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
+import {MatRadioModule} from '@angular/material/radio';
 
 @Component({
   selector: 'app-register',
@@ -12,8 +13,9 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
 })
 export class RegisterComponent implements OnInit {
 
-   collegeId: String
-   password: String
+   collegeId: String;
+   password: String;
+   sex: String;
 
   constructor(
     private router: Router,
@@ -35,7 +37,8 @@ onRegisterSubmit() {
   this.spinnerService.show()
   const user = {
     collegeId : this.collegeId,
-    password : this.password
+    password : this.password,
+    sex: this.sex
   }
   this.authService.registerUser(user).subscribe(data => {
     if (data.data.success === false ) {

@@ -16,8 +16,13 @@
         <input type="password" class="form-control" [(ngModel)]="password" name="password" id="exampleInputPassword1" placeholder="Password" maxlength="20" required>
         <small id="exampleInputPassword1" class="form-text">Your password is protetced with us.</small>
       </div>
+      <mat-radio-group name="sex" [(ngModel)]="sex" form="sex">
+        <label for="">Please select your sex</label><br>
+        <mat-radio-button class="example-margin" value="male">Male</mat-radio-button><br>
+        <mat-radio-button class="example-margin" value="female">Female</mat-radio-button>
+      </mat-radio-group>
       <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Sign In">
+        <input type="submit" class="btn btn-primary" value="Sign UP">
       </div>
     </form>
   </div>

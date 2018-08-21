@@ -6,6 +6,8 @@ import {AuthService} from '../../services/auth.service'
 import {MatTableModule} from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
+import {FlashMessagesService} from 'angular2-flash-messages'
 
 @Component({
   selector: 'app-mess-book',
@@ -66,9 +68,11 @@ export class MessBookComponent implements OnInit {
 
   constructor(
     private http: Http,
-    private route: Router,
+    private router: Router,
     public dialog: MatDialog,
     private authService: AuthService,
+    private spinnerService: Ng4LoadingSpinnerService,
+    private flashMessage: FlashMessagesService,
   ) {
    }
 
@@ -363,11 +367,20 @@ export class MessBookComponent implements OnInit {
       width: '900px',
       data: body
     });
+
+    // sending coupnons
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog closed: ${result}`);
       if(result) {
         this.authService.bookCoupon(body).subscribe(data=>{
-          console.log(data)
+          if (data.data.success === false ) {
+            this.flashMessage.show(data.message, {cssClass: 'alert-danger', timeout: 5000})
+            this.spinnerService.hide()
+          } else if (data.data.success === true) {
+            this.spinnerService.hide()
+            this.flashMessage.show(data.message, {cssClass: 'alert-success', timeout: 5000})
+            this.router.navigate(['/profile'])
+          }
         })
       }
     });

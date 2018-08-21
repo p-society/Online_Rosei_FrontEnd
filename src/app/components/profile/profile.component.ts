@@ -28,5 +28,9 @@ export class ProfileComponent implements OnInit {
       this.spinnerService.hide()
       this.user = data.data.user
     })
+
+    this.authService.getCoupon().subscribe(data => {
+      console.log(data)
+    })
   }
 }

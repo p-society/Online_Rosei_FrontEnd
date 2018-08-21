@@ -36,6 +36,7 @@ export class AuthService {
     .map(res => res.json())
   }
 
+  // get profile
   getProfile() {
     const headers = new Headers()
     this.loadToken()
@@ -46,6 +47,18 @@ export class AuthService {
     .map(res => res.json())
   }
 
+  // get coupon
+  getCoupon() {
+    const headers = new Headers()
+    this.loadToken()
+    const userId = this.loadUserInfo()._id
+    headers.append('x-access-token', this.authToken)
+    headers.append('Content-Type', 'application/json')
+    return this.http.get('http://localhost:3000/book/getCoupon/', {headers: headers})
+    .map(res => res.json())
+  }
+
+  // changing password
   changeSetting(user) {
     const headers = new Headers()
     this.loadToken()
@@ -56,6 +69,7 @@ export class AuthService {
     .map(res => res.json())
   }
 
+  // booking couon
   bookCoupon(data) {
     const headers = new Headers()
     this.loadToken()
