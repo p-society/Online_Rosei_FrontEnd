@@ -4,6 +4,7 @@ import {FlashMessagesService} from 'angular2-flash-messages'
 import {AuthService} from '../../services/auth.service'
 import {Http , HttpModule} from '@angular/http'
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +14,12 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
 export class ProfileComponent implements OnInit {
 
   user: Object
+  couponData: Object
+  messDown: any;
+  messUp: any;
+  displayedColumns: any;
+  costDown: any;
+  costUp: any;
 
   constructor(
     private router: Router,
@@ -30,7 +37,11 @@ export class ProfileComponent implements OnInit {
     })
 
     this.authService.getCoupon().subscribe(data => {
-      console.log(data)
+      this.displayedColumns = ['day','breakfast', 'lunch', 'dinner', 'cost'];
+      this.messDown= data.data.bookedCoupon.messdown
+      this.messUp = data.data.bookedCoupon.messup
+      this.costDown = this.messDown.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+      this.costUp = this.messUp.map(t => t.cost).reduce((acc, value) => acc + value, 0);
     })
   }
 }

@@ -76,8 +76,14 @@ export class MessBookComponent implements OnInit {
   ) {
    }
 
+  // checking when page is loaded
   ngOnInit() {
-
+    this.authService.getCoupon().subscribe(data => {
+      if(data.data.success) {
+        this.flashMessage.show("Coupon already booked for this week", {cssClass: 'alert-danger', timeout: 5000})
+        this.router.navigate(['/profile'])
+      }
+    })
   }
 
   bookCoupon(){
