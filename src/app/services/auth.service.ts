@@ -18,28 +18,28 @@ export class AuthService {
     const headers = new Headers()
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.post('https://topaz-ceiling.glitch.me/user/register', user, {headers : headers} )
+    return this.http.post('http://localhost:3000/user/register', user, {headers : headers} )
     .map(res => res.json())
   }
 
   authenticateUser(user) {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('https://topaz-ceiling.glitch.me/auth/login', user , {headers: headers})
+    return this.http.post('http://localhost:3000/auth/login', user , {headers: headers})
     .map(res => res.json())
   }
 
   authenticateAdmin(admin){
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('https://topaz-ceiling.glitch.me/admin/login', admin , {headers: headers})
+    return this.http.post('http://localhost:3000/admin/login', admin , {headers: headers})
     .map(res => res.json())
   }
 
   activateUser(data) {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('https://topaz-ceiling.glitch.me/user/activate' , data , {headers: headers})
+    return this.http.post('http://localhost:3000/user/activate' , data , {headers: headers})
     .map(res => res.json())
   }
 
@@ -50,7 +50,7 @@ export class AuthService {
     const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('https://topaz-ceiling.glitch.me/user/profile/' + userId, {headers: headers})
+    return this.http.get('http://localhost:3000/user/profile/' + userId, {headers: headers})
     .map(res => res.json())
   }
 
@@ -61,7 +61,7 @@ export class AuthService {
     const adminId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('https://topaz-ceiling.glitch.me/admin/mess1/all/' + adminId, {headers: headers})
+    return this.http.get('http://localhost:3000/admin/mess1/all/' + adminId, {headers: headers})
     .map(res => res.json())
   }
 
@@ -72,7 +72,7 @@ export class AuthService {
     const adminId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('https://topaz-ceiling.glitch.me/admin/mess2/all/' + adminId, {headers: headers})
+    return this.http.get('http://localhost:3000/admin/mess2/all/' + adminId, {headers: headers})
     .map(res => res.json())
   }
 
@@ -84,7 +84,7 @@ export class AuthService {
     const adminId = this.loadUserInfo()._id
     headers.append('x-access-token', data)
     headers.append('Content-Type', 'application/json')
-    return this.http.post('https://topaz-ceiling.glitch.me/admin/god/' + adminId, {headers: headers})
+    return this.http.post('http://localhost:3000/admin/god/' + adminId, {headers: headers})
     .map(res => res.json())
   }
 
@@ -95,7 +95,7 @@ export class AuthService {
     const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('https://topaz-ceiling.glitch.me/book/getCoupon/', {headers: headers})
+    return this.http.get('http://localhost:3000/book/getCoupon/', {headers: headers})
     .map(res => res.json())
   }
 
@@ -106,7 +106,7 @@ export class AuthService {
     const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.post('https://topaz-ceiling.glitch.me/user/setting/'+ userId, user, {headers: headers})
+    return this.http.post('http://localhost:3000/user/setting/'+ userId, user, {headers: headers})
     .map(res => res.json())
   }
 
@@ -117,7 +117,7 @@ export class AuthService {
     const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.post('https://topaz-ceiling.glitch.me/book/bookCoupon/'+ userId, data, {headers: headers})
+    return this.http.post('http://localhost:3000/book/bookCoupon/'+ userId, data, {headers: headers})
     .map(res => res.json())
   }
 
