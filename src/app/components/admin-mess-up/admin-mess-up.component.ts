@@ -6,24 +6,20 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
 import {Http , HttpModule} from '@angular/http'
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
-import {DataSource} from '@angular/cdk/table';
-import { CdkTableModule } from '@angular/cdk/table';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
-  selector: 'app-admin-mess-down-users',
-  templateUrl: './admin-mess-down-users.component.html',
-  styleUrls: ['./admin-mess-down-users.component.css']
+  selector: 'app-admin-mess-up',
+  templateUrl: './admin-mess-up.component.html',
+  styleUrls: ['./admin-mess-up.component.css']
 })
-export class AdminMessDownUsersComponent implements OnInit {
+export class AdminMessUpComponent implements OnInit {
 
   users: any;
   displayedColumns: any;
-  messDown: any;
-  costDown: any;
+  messUp: any;
+  costUp: any;
   message:any;
   i: any;
-  days: any;
 
   constructor(
     private router: Router,
@@ -36,27 +32,26 @@ export class AdminMessDownUsersComponent implements OnInit {
 
   ngOnInit() {
     const Info =this.authService.loadUserInfo();
+
     if (Info.userType !== "admin") {
       this.flashMessage.show("You must be a admin to access this page", {cssClass: 'alert-danger', timeout: 5000})
       this.router.navigate(['/'])
-    } else if (Info.messType !== "mess1") {
+    } else if (Info.messType !== "mess2") {
       this.flashMessage.show("You cannot access this page", {cssClass: 'alert-danger', timeout: 5000})
-      this.router.navigate(['/adminMess2Users'])
+      this.router.navigate(['/adminMess1'])
     }
     else {
-      this.authService.getUsersMessDown().subscribe(data=>{
+      this.authService.getUsersmessUp().subscribe(data=>{
         if (data.data.success) {
-          this.displayedColumns = ['day','breakfast','lunch','dinner'];
-          this.messDown= data.data.users
-          this.costDown = this.messDown.map(t => t.couponDownMess.map(val => val.messdown.map(t => t.cost).reduce((acc, value) => acc + value, 0)));
-          this.days = this.messDown.map(t => t.couponDownMess.map(val => val.messdown));
-          this.costDown.forEach((val, index)=>{
+          this.displayedColumns = ['index','id','name','gender','cost', 'signature'];
+          this.messUp= data.data.users
+          this.costUp = this.messUp.map(t => t.couponUpMess.map(val => val.messup.map(t => t.cost).reduce((acc, value) => acc + value, 0)));
+          this.costUp.forEach((val, index)=>{
             for (this.i ; this.i<=index; this.i++) {
-              this.messDown[index].cost = val[0];
-              this.messDown[index].index = index + 1;
+              this.messUp[index].cost = val[0];
+              this.messUp[index].index = index + 1;
             }
           })
-          console.log(this.messDown)
         } else {
           this.message = data.message
         }
@@ -68,16 +63,10 @@ export class AdminMessDownUsersComponent implements OnInit {
     var divToPrint = document.getElementById('print-section');
     var htmlToPrint = '' +
         '<style type="text/css">' +
-        'table , table td, table thead{' +
+        'table , table td {' +
         'border:1px solid #000;' +
         'padding:0.5em;' +
-        'width: 50%;' +
-        '}' +
-        '#yes{' +
-        'border:1px solid #000;' +
-        'width: 50%;' +
-        'padding:10px;' +
-        'display:inline-block;'+
+        'width: 900px;' +
         '}' +
         '</style>';
     htmlToPrint += divToPrint.outerHTML;

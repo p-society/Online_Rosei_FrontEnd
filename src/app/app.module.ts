@@ -23,6 +23,9 @@ import {MatButtonModule, MatCheckboxModule, MatFormFieldModule
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminMessDownComponent } from './components/admin-mess-down/admin-mess-down.component';
 import { AdminMessDownUsersComponent } from './components/admin-mess-down-users/admin-mess-down-users.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AdminMessUpComponent } from './components/admin-mess-up/admin-mess-up.component';
+import { AdminMessUpUsersComponent } from './components/admin-mess-up-users/admin-mess-up-users.component';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
@@ -34,6 +37,8 @@ const appRoutes: Routes = [
   { path : 'bookCoupon' , component : MessBookComponent , canActivate: [AuthGuard]},
   { path : 'adminMess1' , component : AdminMessDownComponent , canActivate: [AuthGuard]},
   { path : 'adminMess1Users' , component : AdminMessDownUsersComponent , canActivate: [AuthGuard]},
+  { path : 'adminMess2' , component : AdminMessUpComponent , canActivate: [AuthGuard]},
+  { path : 'adminMess2Users' , component : AdminMessUpUsersComponent , canActivate: [AuthGuard]},
 ]
 
 @NgModule({
@@ -49,7 +54,9 @@ const appRoutes: Routes = [
     DialogComponent,
     AdminLoginComponent,
     AdminMessDownComponent,
-    AdminMessDownUsersComponent
+    AdminMessDownUsersComponent,
+    AdminMessUpComponent,
+    AdminMessUpUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatDialogModule,
     MatTableModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatGridListModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],

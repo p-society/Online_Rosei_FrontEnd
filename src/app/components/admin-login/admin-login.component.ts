@@ -46,7 +46,7 @@ export class AdminLoginComponent implements OnInit {
       this.spinnerService.hide()
       this.authService.storeUserData(data.data.token, data.data.user)
       this.flashMessage.show('Successfully logged in ', {cssClass: 'alert-success', timeout: 5000})
-      this.router.navigate(['/adminMess1'])
+      this.router.navigate(['/'])
     }
   })
   }

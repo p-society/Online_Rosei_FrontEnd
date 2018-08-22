@@ -9,18 +9,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {DataSource} from '@angular/cdk/table';
 import { CdkTableModule } from '@angular/cdk/table';
 import {MatGridListModule} from '@angular/material/grid-list';
-
 @Component({
-  selector: 'app-admin-mess-down-users',
-  templateUrl: './admin-mess-down-users.component.html',
-  styleUrls: ['./admin-mess-down-users.component.css']
+  selector: 'app-admin-mess-up-users',
+  templateUrl: './admin-mess-up-users.component.html',
+  styleUrls: ['./admin-mess-up-users.component.css']
 })
-export class AdminMessDownUsersComponent implements OnInit {
+export class AdminMessUpUsersComponent implements OnInit {
 
   users: any;
   displayedColumns: any;
-  messDown: any;
-  costDown: any;
+  messUp: any;
+  costUp: any;
   message:any;
   i: any;
   days: any;
@@ -39,24 +38,23 @@ export class AdminMessDownUsersComponent implements OnInit {
     if (Info.userType !== "admin") {
       this.flashMessage.show("You must be a admin to access this page", {cssClass: 'alert-danger', timeout: 5000})
       this.router.navigate(['/'])
-    } else if (Info.messType !== "mess1") {
+    } else if (Info.messType !== "mess2") {
       this.flashMessage.show("You cannot access this page", {cssClass: 'alert-danger', timeout: 5000})
-      this.router.navigate(['/adminMess2Users'])
+      this.router.navigate(['/adminMess1Users'])
     }
     else {
-      this.authService.getUsersMessDown().subscribe(data=>{
+      this.authService.getUsersmessUp().subscribe(data=>{
         if (data.data.success) {
           this.displayedColumns = ['day','breakfast','lunch','dinner'];
-          this.messDown= data.data.users
-          this.costDown = this.messDown.map(t => t.couponDownMess.map(val => val.messdown.map(t => t.cost).reduce((acc, value) => acc + value, 0)));
-          this.days = this.messDown.map(t => t.couponDownMess.map(val => val.messdown));
-          this.costDown.forEach((val, index)=>{
+          this.messUp= data.data.users
+          this.costUp = this.messUp.map(t => t.couponUpMess.map(val => val.messup.map(t => t.cost).reduce((acc, value) => acc + value, 0)));
+          this.days = this.messUp.map(t => t.couponUpMess.map(val => val.messup));
+          this.costUp.forEach((val, index)=>{
             for (this.i ; this.i<=index; this.i++) {
-              this.messDown[index].cost = val[0];
-              this.messDown[index].index = index + 1;
+              this.messUp[index].cost = val[0];
+              this.messUp[index].index = index + 1;
             }
           })
-          console.log(this.messDown)
         } else {
           this.message = data.message
         }

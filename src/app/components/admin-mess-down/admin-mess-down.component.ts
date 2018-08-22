@@ -35,6 +35,9 @@ export class AdminMessDownComponent implements OnInit {
     if (Info.userType !== "admin") {
       this.flashMessage.show("You must be a admin to access this page", {cssClass: 'alert-danger', timeout: 5000})
       this.router.navigate(['/'])
+    } else if (Info.messType !== "mess1") {
+      this.flashMessage.show("You cannot access this page", {cssClass: 'alert-danger', timeout: 5000})
+      this.router.navigate(['/adminMess2'])
     }
     else {
       this.authService.getUsersMessDown().subscribe(data=>{

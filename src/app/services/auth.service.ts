@@ -65,6 +65,16 @@ export class AuthService {
     .map(res => res.json())
   }
 
+  // get 1st floor users for admin
+  getUsersmessUp() {
+    const headers = new Headers()
+    this.loadToken()
+    const adminId = this.loadUserInfo()._id
+    headers.append('x-access-token', this.authToken)
+    headers.append('Content-Type', 'application/json')
+    return this.http.get('http://localhost:3000/admin/mess2/all/' + adminId, {headers: headers})
+    .map(res => res.json())
+  }
   // get coupon
   getCoupon() {
     const headers = new Headers()
