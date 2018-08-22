@@ -26,6 +26,7 @@ import { AdminMessDownUsersComponent } from './components/admin-mess-down-users/
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AdminMessUpComponent } from './components/admin-mess-up/admin-mess-up.component';
 import { AdminMessUpUsersComponent } from './components/admin-mess-up-users/admin-mess-up-users.component';
+import { GodComponent } from './components/god/god.component';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   { path : 'adminMess1Users' , component : AdminMessDownUsersComponent , canActivate: [AuthGuard]},
   { path : 'adminMess2' , component : AdminMessUpComponent , canActivate: [AuthGuard]},
   { path : 'adminMess2Users' , component : AdminMessUpUsersComponent , canActivate: [AuthGuard]},
+  { path : 'god' , component : GodComponent , canActivate: [AuthGuard]},
 ]
 
 @NgModule({
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     AdminMessDownComponent,
     AdminMessDownUsersComponent,
     AdminMessUpComponent,
-    AdminMessUpUsersComponent
+    AdminMessUpUsersComponent,
+    GodComponent
   ],
   imports: [
     BrowserModule,

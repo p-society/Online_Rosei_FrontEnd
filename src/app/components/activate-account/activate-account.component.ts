@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import {Router} from '@angular/router'
+import {Router, ActivatedRoute} from '@angular/router'
 import {FlashMessagesService} from 'angular2-flash-messages'
 import {AuthService} from '../../services/auth.service'
 import {Http , HttpModule} from '@angular/http'
@@ -14,6 +14,7 @@ export class ActivateAccountComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private flashMessage: FlashMessagesService,
     private http: Http,
     private authService: AuthService,
@@ -22,7 +23,7 @@ export class ActivateAccountComponent implements OnInit {
 
   ngOnInit() {
     if (!this.authService.loggedIn()) {
-      this.authService.activateUser(this.router.currentUrlTree.queryParams).subscribe(data=>{
+      this.authService.activateUser(this.route.snapshot.queryParams).subscribe(data=>{
         this.spinnerService.show()
         if (data.data.success === false ) {
           this.flashMessage.show(data.message, {cssClass: 'alert-danger', timeout: 5000})

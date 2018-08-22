@@ -18,28 +18,28 @@ export class AuthService {
     const headers = new Headers()
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.post('http://localhost:3000/user/register', user, {headers : headers} )
+    return this.http.post('user/register', user, {headers : headers} )
     .map(res => res.json())
   }
 
   authenticateUser(user) {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('http://localhost:3000/auth/login', user , {headers: headers})
+    return this.http.post('auth/login', user , {headers: headers})
     .map(res => res.json())
   }
 
   authenticateAdmin(admin){
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('http://localhost:3000/admin/login', admin , {headers: headers})
+    return this.http.post('admin/login', admin , {headers: headers})
     .map(res => res.json())
   }
 
   activateUser(data) {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('http://localhost:3000/user/activate' , data , {headers: headers})
+    return this.http.post('user/activate' , data , {headers: headers})
     .map(res => res.json())
   }
 
@@ -50,7 +50,7 @@ export class AuthService {
     const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('http://localhost:3000/user/profile/' + userId, {headers: headers})
+    return this.http.get('user/profile/' + userId, {headers: headers})
     .map(res => res.json())
   }
 
@@ -61,7 +61,7 @@ export class AuthService {
     const adminId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('http://localhost:3000/admin/mess1/all/' + adminId, {headers: headers})
+    return this.http.get('admin/mess1/all/' + adminId, {headers: headers})
     .map(res => res.json())
   }
 
@@ -72,9 +72,22 @@ export class AuthService {
     const adminId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('http://localhost:3000/admin/mess2/all/' + adminId, {headers: headers})
+    return this.http.get('admin/mess2/all/' + adminId, {headers: headers})
     .map(res => res.json())
   }
+
+  // God admin route
+
+  god(data) {
+    const headers = new Headers()
+    this.loadToken()
+    const adminId = this.loadUserInfo()._id
+    headers.append('x-access-token', data)
+    headers.append('Content-Type', 'application/json')
+    return this.http.post('admin/god/' + adminId, {headers: headers})
+    .map(res => res.json())
+  }
+
   // get coupon
   getCoupon() {
     const headers = new Headers()
@@ -82,7 +95,7 @@ export class AuthService {
     const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('http://localhost:3000/book/getCoupon/', {headers: headers})
+    return this.http.get('book/getCoupon/', {headers: headers})
     .map(res => res.json())
   }
 
@@ -93,7 +106,7 @@ export class AuthService {
     const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.post('http://localhost:3000/user/setting/'+ userId, user, {headers: headers})
+    return this.http.post('user/setting/'+ userId, user, {headers: headers})
     .map(res => res.json())
   }
 
@@ -104,7 +117,7 @@ export class AuthService {
     const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.post('http://localhost:3000/book/bookCoupon/'+ userId, data, {headers: headers})
+    return this.http.post('book/bookCoupon/'+ userId, data, {headers: headers})
     .map(res => res.json())
   }
 

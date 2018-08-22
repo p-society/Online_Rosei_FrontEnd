@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   admin: string
   messDown: string
   messUp: string
+  god: string
 
   constructor(
     private authService: AuthService,
@@ -30,8 +31,10 @@ export class NavbarComponent implements OnInit {
         if (Info.messType === "mess1") {
           this.messDown = Info.messType
         }
-        else {
+        else if (Info.messType === "mess2"){
           this.messUp = Info.messType
+        } else {
+          this.god = Info.messType
         }
       }
     }
