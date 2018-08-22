@@ -36,11 +36,12 @@ export class ProfileComponent implements OnInit {
     this.authService.getProfile().subscribe(data => {
       this.spinnerService.hide()
       this.user = data.data.user
-      const Info =this.authService.loadUserInfo();
-      if (Info.userType === "admin") {
-        this.router.navigate(['/'])
-      }
     })
+
+    const Info =this.authService.loadUserInfo();
+    if (Info.userType === "admin") {
+      this.router.navigate(['/'])
+    }
 
     this.authService.getCoupon().subscribe(data => {
         if (data.data.success) {

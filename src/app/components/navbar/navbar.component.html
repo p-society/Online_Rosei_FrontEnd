@@ -20,7 +20,7 @@
       </div>
 
       <!-- God route-->
-      <li class="nav-item d" *ngIf="authService.loggedIn() && !user && !messDown && !messUp" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+      <li class="nav-item d" *ngIf="authService.loggedIn() && god" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
        <a class="nav-link" href="god" onmousedown="return false">Delete Coupons</a>
       </li>
 

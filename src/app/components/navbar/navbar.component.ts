@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   god: string
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router
   ) { }
 
