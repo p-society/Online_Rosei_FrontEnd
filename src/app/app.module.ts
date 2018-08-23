@@ -19,7 +19,7 @@ import { MessBookComponent, DialogComponent } from './components/mess-book/mess-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule
   , MatInputModule, MatSelectModule, MatDialogModule, MatTableModule
-  , MatExpansionModule, MatRadioModule} from '@angular/material';
+  , MatExpansionModule, MatRadioModule, MatCardModule} from '@angular/material';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminMessDownComponent } from './components/admin-mess-down/admin-mess-down.component';
 import { AdminMessDownUsersComponent } from './components/admin-mess-down-users/admin-mess-down-users.component';
@@ -78,7 +78,8 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatTableModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],

@@ -1,35 +1,48 @@
-<div class="jumbotron registerCard">
-<div class="row">
-  <div class="col-xs-12 col-md-3">
-  </div>
-  <div class="col-xs-12  col-md-6">
-    <h1 class="hovere"><legend>SignUp</legend></h1>
-    <hr/>
-    <form (submit)="onRegisterSubmit()">
-      <div class="form-group">
-        <label for="exampleInputcollegeId">College ID</label>
-        <input type="text" [(ngModel)]="collegeId" name="collegeId" class="form-control" id="exampleInputcollegeId"  maxlength="14" placeholder="Enter College ID" required autofocus>
-        <small id="exampleInputcollegeId" class="form-text">Enter your college ID</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputName">Name</label>
-        <input type="text" [(ngModel)]="name" name="name" class="form-control" id="exampleInputcollegeId"  maxlength="40" placeholder="Enter your name" required>
-        <small id="exampleInputName" class="form-text">Enter your Name</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" [(ngModel)]="password" name="password" id="exampleInputPassword1" placeholder="Password" maxlength="40" required>
-        <small id="exampleInputPassword1" class="form-text">Your password is protetced with us.</small>
-      </div>
-      <mat-radio-group name="sex" [(ngModel)]="sex" form="sex">
-        <label for="">Please select your sex</label><br>
-        <mat-radio-button class="example-margin" value="male">Male</mat-radio-button><br>
-        <mat-radio-button class="example-margin" value="female">Female</mat-radio-button>
-      </mat-radio-group>
-      <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Sign UP">
-      </div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><h1 class="hovere">Register</h1></mat-card-title>
+    <mat-card-subtitle>You need to register to book coupons</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="example-form">
+      <mat-grid-list cols="1" rowHeight="13:1">
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput type="email" [(ngModel)]="collegeId" name="collegeId" required autofocus placeholder="Enter your college Email">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="1" rowHeight="13:1">
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput type="text" [(ngModel)]="name" name="name" maxlength="40" placeholder="Enter your name" required>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="1" rowHeight="13:1">
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput type="password" [(ngModel)]="password" name="password" required placeholder="Enter your password">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="1" rowHeight="13:1">
+        <mat-grid-tile>
+          <mat-radio-group name="sex" [(ngModel)]="sex" form="sex" class="example-full-width">
+            <label for="">Please select your sex</label><br>
+            <mat-radio-button class="example-margin" value="male" style="padding:10px;">Male</mat-radio-button>
+            <mat-radio-button class="example-margin" value="female">Female</mat-radio-button>
+          </mat-radio-group>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="1" rowHeight="13:1">
+        <mat-grid-tile>
+          <button mat-raised-button color="primary" (click)="onRegisterSubmit()" class="buttonWidth">Register</button>
+        </mat-grid-tile>
+      </mat-grid-list>
     </form>
-  </div>
-</div>
-</div>
+  </mat-card-content>
+</mat-card>

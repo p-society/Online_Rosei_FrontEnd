@@ -1,15 +1,26 @@
-<div class="jumbotron loginCard">
-  <h1 class="hovere">Login</h1>
-  <form (submit)="onLoginSubmit()">
-    <div class="form-group">
-      <label>College Email</label>
-      <input type="text" [(ngModel)]="email" name="email" class="form-control" required autofocus placeholder="Enter your college Email">
-    </div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><h1 class="hovere">Login</h1></mat-card-title>
+    <mat-card-subtitle>You need to login to book coupons</mat-card-subtitle>
+  </mat-card-header>
 
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Enter your password" required>
-    </div>
-    <input type="submit" class="btn btn-primary btn-lg" value="Login">
-  </form>
-</div>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput type="email" [(ngModel)]="email" name="email" required autofocus placeholder="Enter your college Email">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field class="example-full-width">
+            <input matInput type="password" [(ngModel)]="password" name="password" placeholder="Enter your password" required>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-raised-button color="primary" (click)="onLoginSubmit()">Login</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card-content>
+</mat-card>
