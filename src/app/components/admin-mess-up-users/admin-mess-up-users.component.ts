@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {DataSource} from '@angular/cdk/table';
 import { CdkTableModule } from '@angular/cdk/table';
 import {MatGridListModule} from '@angular/material/grid-list';
+
 @Component({
   selector: 'app-admin-mess-up-users',
   templateUrl: './admin-mess-up-users.component.html',
@@ -53,8 +54,14 @@ export class AdminMessUpUsersComponent implements OnInit {
             for (this.i ; this.i<=index; this.i++) {
               this.messUp[index].cost = val[0];
               this.messUp[index].index = index + 1;
+              if (this.messUp[index].cost === 0) {
+                (this.messUp[index]) = undefined
+              }
             }
           })
+
+          this.messUp = this.messUp.filter((n) => { return n !== undefined })
+
         } else {
           this.message = data.message
         }

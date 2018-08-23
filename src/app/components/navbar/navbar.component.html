@@ -33,6 +33,10 @@
        <a class="nav-link" href="adminMess1Users" onmousedown="return false">User Coupons</a>
       </li>
 
+      <li class="nav-item d" *ngIf="authService.loggedIn() && !user && messDown" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+       <a class="nav-link" href="adminMess1UsersTotal" onmousedown="return false">See total Coupons by day</a>
+      </li>
+
       <!-- admin up-->
       <li class="nav-item d" *ngIf="authService.loggedIn() && !user && messUp" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
        <a class="nav-link" href="adminMess2" onmousedown="return false">All Coupons</a>
@@ -40,6 +44,10 @@
 
       <li class="nav-item d" *ngIf="authService.loggedIn() && !user && messUp" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
        <a class="nav-link" href="adminMess2Users" onmousedown="return false">User Coupons</a>
+      </li>
+
+      <li class="nav-item d" *ngIf="authService.loggedIn() && !user && messUp" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+       <a class="nav-link" href="adminMess2UsersTotal" onmousedown="return false">See total Coupons by day</a>
       </li>
 
     </ul>

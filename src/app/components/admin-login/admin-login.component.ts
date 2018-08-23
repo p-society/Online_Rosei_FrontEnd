@@ -25,7 +25,7 @@ export class AdminLoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.loggedIn()) {
-      if (this.router.url === '/login') {
+      if (this.router.url === '/adminLogin') {
         this.router.navigate(['/adminMess1'])
       }
     }
