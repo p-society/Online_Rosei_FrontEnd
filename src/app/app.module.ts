@@ -27,6 +27,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { AdminMessUpComponent } from './components/admin-mess-up/admin-mess-up.component';
 import { AdminMessUpUsersComponent } from './components/admin-mess-up-users/admin-mess-up-users.component';
 import { GodComponent } from './components/god/god.component';
+import { AdminMessDownTotalComponent } from './components/admin-mess-down-total/admin-mess-down-total.component';
+import { AdminMessUpTotalComponent } from './components/admin-mess-up-total/admin-mess-up-total.component';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
@@ -38,8 +40,10 @@ const appRoutes: Routes = [
   { path : 'bookCoupon' , component : MessBookComponent , canActivate: [AuthGuard]},
   { path : 'adminMess1' , component : AdminMessDownComponent , canActivate: [AuthGuard]},
   { path : 'adminMess1Users' , component : AdminMessDownUsersComponent , canActivate: [AuthGuard]},
+  { path : 'adminMess1UsersTotal' , component : AdminMessDownTotalComponent , canActivate: [AuthGuard]},
   { path : 'adminMess2' , component : AdminMessUpComponent , canActivate: [AuthGuard]},
   { path : 'adminMess2Users' , component : AdminMessUpUsersComponent , canActivate: [AuthGuard]},
+  { path : 'adminMess2UsersTotal' , component : AdminMessUpTotalComponent , canActivate: [AuthGuard]},
   { path : 'god' , component : GodComponent , canActivate: [AuthGuard]},
 ]
 
@@ -59,7 +63,9 @@ const appRoutes: Routes = [
     AdminMessDownUsersComponent,
     AdminMessUpComponent,
     AdminMessUpUsersComponent,
-    GodComponent
+    GodComponent,
+    AdminMessDownTotalComponent,
+    AdminMessUpTotalComponent
   ],
   imports: [
     BrowserModule,

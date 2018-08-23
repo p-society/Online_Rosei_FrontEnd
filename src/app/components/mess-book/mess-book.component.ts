@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { Http , HttpModule } from '@angular/http'
 import {Router} from '@angular/router'
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
@@ -15,7 +15,7 @@ import {FlashMessagesService} from 'angular2-flash-messages'
   styleUrls: ['./mess-book.component.css']
 })
 export class MessBookComponent implements OnInit {
-
+  @ViewChild('submitButton') submitButton:ElementRef;
   monBrVegNon : String;
   monLunVegNon : String;
   monDinvegNon: String;
@@ -381,8 +381,12 @@ export class MessBookComponent implements OnInit {
 
     // sending coupnons
     dialogRef.afterClosed().subscribe(result => {
+    this.spinnerService.show()
+    this.submitButton.nativeElement.disabled = true;
       console.log(`Dialog closed: ${result}`);
-      if(result) {
+      console.log(this.checkBody(body))
+      if (this.checkBody(body)) {
+        if(result) {
         this.authService.bookCoupon(body).subscribe(data=>{
           if (data.data.success === false ) {
             this.flashMessage.show(data.message, {cssClass: 'alert-danger', timeout: 5000})
@@ -391,13 +395,37 @@ export class MessBookComponent implements OnInit {
             this.spinnerService.hide()
             this.flashMessage.show(data.message, {cssClass: 'alert-success', timeout: 5000})
             this.router.navigate(['/profile'])
+            this.submitButton.nativeElement.disabled = false;
           }
         })
+        } else {
+          this.spinnerService.hide()
+          this.submitButton.nativeElement.disabled = false;
+        }
+      } else {
+        this.flashMessage.show("Please select atleast one coupon", {cssClass: 'alert-danger', timeout: 5000})
+        this.spinnerService.hide()
+        this.submitButton.nativeElement.disabled = false;
       }
     });
 
   }
+
+  checkBody(body) {
+    if ((Object.keys(body.mess1.breakfastMess1).length === 0 && body.mess1.breakfastMess1.constructor === Object) &&
+        (Object.keys(body.mess1.lunchMess1).length === 0 && body.mess1.lunchMess1.constructor === Object) &&
+        (Object.keys(body.mess1.dinnerMess1).length === 0 && body.mess1.dinnerMess1.constructor === Object) &&
+        (Object.keys(body.mess2.breakfastMess2).length === 0 && body.mess2.breakfastMess2.constructor === Object) &&
+        (Object.keys(body.mess2.lunchMess2).length === 0 && body.mess2.lunchMess2.constructor === Object) &&
+        (Object.keys(body.mess2.dinnerMess2).length === 0 && body.mess2.dinnerMess2.constructor === Object)
+      ) {
+        return false
+      } else {
+        return true
+      }
+  }
 }
+
 
 export interface MessElement {
   day: string;

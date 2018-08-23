@@ -1,0 +1,71 @@
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Mess2 (1st Floor)
+      </mat-panel-title>
+      <mat-panel-description>
+        Press this to toggle
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div *ngIf="messUp">
+    <button mat-flat-button color="warn" (click)="print()">Print Coupon</button>
+    <div id="print-section">
+    <!-- 1st Floor Mess -->
+
+    <div class="jumbotron">
+      <h2 style="color:black;text-align:center;">Mess 2(1st Floor)</h2>
+      <table mat-table [dataSource]="finalArr" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+        <ng-container matColumnDef="day">
+          <th mat-header-cell *matHeaderCellDef> Day </th>
+          <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="vegBr">
+          <th mat-header-cell *matHeaderCellDef> BreakFast Veg </th>
+          <td mat-cell *matCellDef="let element"> {{element.vegBr}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nonBr">
+          <th mat-header-cell *matHeaderCellDef> BreakFast Non-Veg </th>
+          <td mat-cell *matCellDef="let element"> {{element.nonBr}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="vegLun">
+          <th mat-header-cell *matHeaderCellDef> Lunch Veg </th>
+          <td mat-cell *matCellDef="let element"> {{element.vegLun}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nonLun">
+          <th mat-header-cell *matHeaderCellDef> Lunch Non-Veg </th>
+          <td mat-cell *matCellDef="let element"> {{element.nonLun}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="vegDin">
+          <th mat-header-cell *matHeaderCellDef> Dinner Veg </th>
+          <td mat-cell *matCellDef="let element"> {{element.vegDin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nonDin">
+          <th mat-header-cell *matHeaderCellDef> Dinner Non-Veg </th>
+          <td mat-cell *matCellDef="let element"> {{element.nonDin}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </div>
+    </div>
+    </div>
+    <!-- if no coupon-->
+    <div *ngIf="message">
+      <p style="color:white">{{message}}</p>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
