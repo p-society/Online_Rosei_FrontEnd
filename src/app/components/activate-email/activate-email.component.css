@@ -1,0 +1,14 @@
+.hovere{
+  cursor: pointer;
+  color: #868e96e3;
+}
+
+.example-form {
+  min-width: 250px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  padding: 10px;
+}

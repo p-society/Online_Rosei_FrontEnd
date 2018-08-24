@@ -3,9 +3,6 @@ import {Router} from '@angular/router'
 import {FlashMessagesService} from 'angular2-flash-messages'
 import {AuthService} from '../../services/auth.service'
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-login',

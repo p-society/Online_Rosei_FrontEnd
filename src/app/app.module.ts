@@ -29,9 +29,11 @@ import { AdminMessUpUsersComponent } from './components/admin-mess-up-users/admi
 import { GodComponent } from './components/god/god.component';
 import { AdminMessDownTotalComponent } from './components/admin-mess-down-total/admin-mess-down-total.component';
 import { AdminMessUpTotalComponent } from './components/admin-mess-up-total/admin-mess-up-total.component';
+import { ActivateEmailComponent } from './components/activate-email/activate-email.component';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
+  { path : 'sendActivation' , component : ActivateEmailComponent},
   { path : 'login' , component : LoginComponent},
   { path : 'adminLogin' , component : AdminLoginComponent},
   { path : 'activateUser' , component : ActivateAccountComponent},
@@ -65,7 +67,8 @@ const appRoutes: Routes = [
     AdminMessUpUsersComponent,
     GodComponent,
     AdminMessDownTotalComponent,
-    AdminMessUpTotalComponent
+    AdminMessUpTotalComponent,
+    ActivateEmailComponent
   ],
   imports: [
     BrowserModule,

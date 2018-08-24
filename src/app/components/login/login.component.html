@@ -9,12 +9,12 @@
       <mat-grid-list cols="3" rowHeight="3:1">
         <mat-grid-tile>
           <mat-form-field class="example-full-width">
-            <input matInput type="email" [(ngModel)]="email" name="email" required autofocus placeholder="Enter your college Email">
+            <input matInput type="email" [(ngModel)]="email" name="email" required autofocus placeholder="College Email">
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field class="example-full-width">
-            <input matInput type="password" [(ngModel)]="password" name="password" placeholder="Enter your password" required>
+            <input matInput type="password" [(ngModel)]="password" name="password" placeholder="Password" required>
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
@@ -23,4 +23,9 @@
       </mat-grid-list>
     </form>
   </mat-card-content>
+  <mat-grid-list cols="1" rowHeight="15:1">
+    <mat-grid-tile>
+      <button mat-raised-button color="accent" style="padding:10px;"><a href="sendActivation">No Activation email?</a></button>
+    </mat-grid-tile>
+  </mat-grid-list>
 </mat-card>

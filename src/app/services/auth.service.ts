@@ -121,6 +121,15 @@ export class AuthService {
     .map(res => res.json())
   }
 
+  // activation email
+
+  sendActivationEmail(data) {
+    const headers = new Headers()
+    headers.append('Content-Type', 'application/json')
+    return this.http.post('https://topaz-ceiling.glitch.me/user/sendActivation/', data, {headers: headers})
+    .map(res => res.json())
+  }
+
   storeUserData(token , user) {
     localStorage.setItem('token-id', token)
     localStorage.setItem('user', JSON.stringify(user))
