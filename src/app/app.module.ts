@@ -30,10 +30,12 @@ import { GodComponent } from './components/god/god.component';
 import { AdminMessDownTotalComponent } from './components/admin-mess-down-total/admin-mess-down-total.component';
 import { AdminMessUpTotalComponent } from './components/admin-mess-up-total/admin-mess-up-total.component';
 import { ActivateEmailComponent } from './components/activate-email/activate-email.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const appRoutes: Routes = [
   { path : 'register' , component : RegisterComponent},
   { path : 'sendActivation' , component : ActivateEmailComponent},
+  { path : 'forgotPassword' , component : ForgotPasswordComponent},
   { path : 'login' , component : LoginComponent},
   { path : 'adminLogin' , component : AdminLoginComponent},
   { path : 'activateUser' , component : ActivateAccountComponent},
@@ -68,7 +70,8 @@ const appRoutes: Routes = [
     GodComponent,
     AdminMessDownTotalComponent,
     AdminMessUpTotalComponent,
-    ActivateEmailComponent
+    ActivateEmailComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
