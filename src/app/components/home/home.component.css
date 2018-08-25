@@ -4,5 +4,7 @@
 
 .listColur {
   color: #fd7e14;
-  padding: 40px;
+  padding: 20px;
+  font-size: 17px;
+  font-weight: bold;
 }

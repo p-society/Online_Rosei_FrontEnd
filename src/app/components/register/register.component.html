@@ -4,45 +4,29 @@
     <mat-card-subtitle>You need to register to book coupons</mat-card-subtitle>
   </mat-card-header>
 
-  <mat-card-content>
+  <mat-card-content class="text-center">
     <form class="example-form">
-      <mat-grid-list cols="1" rowHeight="13:1">
-        <mat-grid-tile>
+
           <mat-form-field class="example-full-width">
             <input matInput type="text" [(ngModel)]="collegeId" name="collegeId" required autofocus placeholder="College id">
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
+          </mat-form-field><br>
 
-      <mat-grid-list cols="1" rowHeight="13:1">
-        <mat-grid-tile>
           <mat-form-field class="example-full-width">
-            <input matInput type="text" [(ngModel)]="name" name="name" maxlength="40" placeholder="Enter your name" required>
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
-      <mat-grid-list cols="1" rowHeight="13:1">
-        <mat-grid-tile>
+            <input matInput type="text" [(ngModel)]="name" name="name" maxlength="40" placeholder="Enter name" required>
+          </mat-form-field><br>
+
           <mat-form-field class="example-full-width">
-            <input matInput type="password" [(ngModel)]="password" name="password" required placeholder="Enter your password">
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
-      <mat-grid-list cols="1" rowHeight="13:1">
-        <mat-grid-tile>
+            <input matInput type="password" [(ngModel)]="password" name="password" required placeholder="Enter password">
+          </mat-form-field><br>
+
           <mat-radio-group name="sex" [(ngModel)]="sex" form="sex" class="example-full-width">
             <label for="">Please select your sex</label><br>
-            <mat-radio-button class="example-margin" value="male" style="padding:10px;">Male</mat-radio-button>
-            <mat-radio-button class="example-margin" value="female">Female</mat-radio-button>
-          </mat-radio-group>
-        </mat-grid-tile>
-      </mat-grid-list>
+            <mat-radio-button class="example-margin" value="male" >Male</mat-radio-button><br>
+            <mat-radio-button class="example-margin" value="female" >Female</mat-radio-button>
+          </mat-radio-group><br>
 
-      <mat-grid-list cols="1" rowHeight="13:1">
-        <mat-grid-tile>
           <button mat-raised-button color="primary" (click)="onRegisterSubmit()" class="buttonWidth">Register</button>
-        </mat-grid-tile>
-      </mat-grid-list>
+
     </form>
   </mat-card-content>
 </mat-card>
