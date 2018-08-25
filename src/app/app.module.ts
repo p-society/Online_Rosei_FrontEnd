@@ -19,7 +19,7 @@ import { MessBookComponent, DialogComponent } from './components/mess-book/mess-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule
   , MatInputModule, MatSelectModule, MatDialogModule, MatTableModule
-  , MatExpansionModule, MatRadioModule, MatCardModule} from '@angular/material';
+  , MatExpansionModule, MatRadioModule, MatCardModule, MatListModule} from '@angular/material';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminMessDownComponent } from './components/admin-mess-down/admin-mess-down.component';
 import { AdminMessDownUsersComponent } from './components/admin-mess-down-users/admin-mess-down-users.component';
@@ -31,8 +31,10 @@ import { AdminMessDownTotalComponent } from './components/admin-mess-down-total/
 import { AdminMessUpTotalComponent } from './components/admin-mess-up-total/admin-mess-up-total.component';
 import { ActivateEmailComponent } from './components/activate-email/activate-email.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { HomeComponent } from './components/home/home.component';
 
 const appRoutes: Routes = [
+  { path : '' , component : HomeComponent},
   { path : 'register' , component : RegisterComponent},
   { path : 'sendActivation' , component : ActivateEmailComponent},
   { path : 'forgotPassword' , component : ForgotPasswordComponent},
@@ -71,7 +73,8 @@ const appRoutes: Routes = [
     AdminMessDownTotalComponent,
     AdminMessUpTotalComponent,
     ActivateEmailComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,8 @@ const appRoutes: Routes = [
     MatTableModule,
     MatExpansionModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
