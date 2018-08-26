@@ -24,7 +24,14 @@ export class AdminMessDownUsersComponent implements OnInit {
   message:any;
   i: any;
   days: any;
-
+  bricks = [
+     {title: 'Brick 1'},
+     {title: 'Brick 2'},
+     {title: 'Brick 3'},
+     {title: 'Brick 4'},
+     {title: 'Brick 5'},
+     {title: 'Brick 6'}
+   ]
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -73,17 +80,11 @@ export class AdminMessDownUsersComponent implements OnInit {
     var divToPrint = document.getElementById('print-section');
     var htmlToPrint = '' +
         '<style type="text/css">' +
-        'table , table td, table thead{' +
+        'table {' +
         'border:1px solid #000;' +
         'padding:0.5em;' +
-        'width: 50%;' +
-        '}' +
-        '#yes{' +
-        'border:1px solid #000;' +
-        'width: 50%;' +
-        'padding:10px;' +
-        'display:inline-block;'+
-        '}' +
+        'width: 100%;' +
+        '}' + 
         '</style>';
     htmlToPrint += divToPrint.outerHTML;
     var newWin = window.open("");

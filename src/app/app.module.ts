@@ -32,6 +32,7 @@ import { AdminMessUpTotalComponent } from './components/admin-mess-up-total/admi
 import { ActivateEmailComponent } from './components/activate-email/activate-email.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 const appRoutes: Routes = [
   { path : '' , component : HomeComponent},
@@ -95,7 +96,8 @@ const appRoutes: Routes = [
     MatExpansionModule,
     MatGridListModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    NgxMasonryModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],

@@ -16,37 +16,34 @@
     <!-- Ground Floor Mess -->
 
       <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <span *ngFor="let val of messUp">
-            <div id="yes">
-            <table class="table" style="color:black">
-                <thead class="table">
-                    <h5>{{val.collegeId}}</h5>
-                    <h5>{{val.name}}</h5>
-                    <tr class="test">
-                        <td>Day</td>
-                        <td>BreakFast</td>
-                        <td>Lunch</td>
-                        <td>Dinner</td>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <ngx-masonry>
+            <ngxMasonryItem class="brick" *ngFor="let val of messUp">
+              <table style="color:black; width:100%;" class="jumbotron">
+                <tr class="test">
+                  <th>Day</th>
+                  <th>BreakFast</th>
+                  <th>Lunch</th>
+                  <th>Dinner</th>
+                </tr><br><br>
+                <tr>
+                  <div *ngFor="let result of val.couponUpMess">
+                    <tr *ngFor="let final of result.messup">
+                      <td>{{final.day}}</td>
+                      <td>{{final.breakfast}}</td>
+                      <td>{{final.lunch}}</td>
+                      <td>{{final.dinner}}</td>
                     </tr>
-                </thead>
-                <tbody class="table test2">
-                    <div *ngFor="let result of val.couponUpMess">
-                      <tr *ngFor="let final of result.messup">
-                        <td>{{final.day}}</td>
-                        <td>{{final.breakfast}}</td>
-                        <td>{{final.lunch}}</td>
-                        <td>{{final.dinner}}</td>
-                      </tr>
-                    </div>
-                    <h5> Total:- {{val.cost}}</h5>
-                </tbody>
-            </table><br>
-            </div>
-          </span>
+                  </div>
+                  <strong>Mess 2(First floor)</strong>
+                  <span> {{val.collegeId}}  <strong>Total:-</strong> {{val.cost}} <strong>{{val.name}}</strong></span>
+                </tr>
+              </table><br>
+              <hr>
+            </ngxMasonryItem>
+          </ngx-masonry>
         </div>
       </div>
-
     </div>
     </div>
     <!-- if no coupon-->
