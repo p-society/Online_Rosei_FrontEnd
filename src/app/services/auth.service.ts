@@ -47,10 +47,9 @@ export class AuthService {
   getProfile() {
     const headers = new Headers()
     this.loadToken()
-    const userId = this.loadUserInfo()._id
     headers.append('x-access-token', this.authToken)
     headers.append('Content-Type', 'application/json')
-    return this.http.get('https://topaz-ceiling.glitch.me/user/profile/' + userId, {headers: headers})
+    return this.http.get('https://topaz-ceiling.glitch.me/user/profile' , {headers: headers})
     .map(res => res.json())
   }
 
@@ -135,7 +134,7 @@ export class AuthService {
   resetPassword(data) {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('https://topaz-ceiling.glitch.me/user/forgotPassword/', data, {headers: headers})
+    return this.http.post('http://localhost:3000/user/forgotPassword/', data, {headers: headers})
     .map(res => res.json())
   }
 

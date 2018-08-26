@@ -383,8 +383,6 @@ export class MessBookComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     this.spinnerService.show()
     this.submitButton.nativeElement.disabled = true;
-      console.log(`Dialog closed: ${result}`);
-      console.log(this.checkBody(body))
       if (this.checkBody(body)) {
         if(result) {
         this.authService.bookCoupon(body).subscribe(data=>{
@@ -403,7 +401,7 @@ export class MessBookComponent implements OnInit {
           this.submitButton.nativeElement.disabled = false;
         }
       } else {
-        this.flashMessage.show("Please select atleast one coupon", {cssClass: 'alert-danger', timeout: 5000})
+        this.flashMessage.show("Please select atleast one coupon", {cssClass: 'alert-danger', timeout: 8000})
         this.spinnerService.hide()
         this.submitButton.nativeElement.disabled = false;
       }

@@ -27,7 +27,7 @@
 
                 <span class="listColur">
                   <p>
-                    Our college do not provide funds or anything but still for your convenience we have hosted it on a server and using
+                    We do not have any funds but still for your convenience we have hosted it on a server and using
                     premium email service to provide better user experience in case you forget your password or didn't recieve an activation email.
                   </p>
                 </span>
@@ -52,7 +52,7 @@
 
 <!-- when logged in -->
 
-<div *ngIf="authService.loggedIn()">
+<div *ngIf="authService.loggedIn() && user">
   <div class="container">
     <div class="row justify-content-end">
       <div class="col-12">

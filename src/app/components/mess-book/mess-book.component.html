@@ -44,23 +44,26 @@
               <div class="row">
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>BreakFast</p>
-                    <mat-radio-group [(ngModel)]="monBrVegNon" name = "monBrVegNon"  form="monBrVegNon">
+                    <mat-radio-group [(ngModel)]="monBrVegNon" name = "monBrVegNon"  form="monBrVegNon" id="monBrVegNon">
                       <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                      <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                      <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                      <a class="undo" (click)= "monBrVegNon = undefined">&otimes; clear </a>
                     </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "monLunVegNon" [(ngModel)]="monLunVegNon" form="monLunVegNon" >
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "monLunVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="monDinvegNon" [(ngModel)]="monDinvegNon" form="monDinvegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "monDinvegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -72,21 +75,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "tuesBrVegNon" [(ngModel)]="tuesBrVegNon" form="tuesBrVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "tuesBrVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "tuesLunVegNon" [(ngModel)]="tuesLunVegNon" form="tuesLunVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "tuesLunVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="tuesDinvegNon" [(ngModel)]="tuesDinvegNon" form="tuesDinvegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "tuesDinvegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -98,21 +104,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "wedBrVegNon" [(ngModel)]="wedBrVegNon" form="wedBrVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "wedBrVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "wedLunVegNon" [(ngModel)]="wedLunVegNon" form="wedLunVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "wedLunVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="wedDinvegNon" [(ngModel)]="wedDinvegNon" form="wedDinvegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "wedDinvegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -124,21 +133,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "thuBrVegNon" [(ngModel)]="thuBrVegNon" form="thuBrVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "thuBrVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "thuLunVegNon" [(ngModel)]="thuLunVegNon" form="thuLunVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "thuLunVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="thuDinvegNon" [(ngModel)]="thuDinvegNon" form="thuDinvegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "thuDinvegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -150,21 +162,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "friBrVegNon" [(ngModel)]="friBrVegNon" form="friBrVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "friBrVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "friLunVegNon" [(ngModel)]="friLunVegNon" form="friLunVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "friLunVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="friDinvegNon" [(ngModel)]="friDinvegNon" form="friDinvegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "friDinvegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -176,21 +191,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "satBrVegNon" [(ngModel)]="satBrVegNon" form="satBrVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "satBrVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "satLunVegNon" [(ngModel)]="satLunVegNon" form="satLunVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "satLunVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="satDinvegNon" [(ngModel)]="satDinvegNon" form="satDinvegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "satDinvegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -202,21 +220,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "sunBrVegNon" [(ngModel)]="sunBrVegNon" form="sunBrVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "sunBrVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "sunLunVegNon" [(ngModel)]="sunLunVegNon" form="sunLunVegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "sunLunVegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name = "sunDinvegNon" [(ngModel)]="sunDinvegNon" form="sunDinvegNon">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "sunDinvegNon = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -244,21 +265,24 @@
                   <p>BreakFast</p>
                     <mat-radio-group [(ngModel)]="monBrVegNon1" name = "monBrVegNon1"  form="monBrVegNon1">
                       <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                      <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                      <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                      <a class="undo" (click)= "monBrVegNon1 = undefined">&otimes; clear </a>
                     </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "monLunVegNon1" [(ngModel)]="monLunVegNon1" form="monLunVegNon1" >
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "monLunVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="monDinvegNon1" [(ngModel)]="monDinvegNon1" form="monDinvegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "monDinvegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -270,21 +294,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "tuesBrVegNon1" [(ngModel)]="tuesBrVegNon1" form="tuesBrVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "tuesBrVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "tuesLunVegNon1" [(ngModel)]="tuesLunVegNon1" form="tuesLunVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "tuesLunVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="tuesDinvegNon1" [(ngModel)]="tuesDinvegNon1" form="tuesDinvegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "tuesDinvegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -296,21 +323,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "wedBrVegNon1" [(ngModel)]="wedBrVegNon1" form="wedBrVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "wedBrVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "wedLunVegNon1" [(ngModel)]="wedLunVegNon1" form="wedLunVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "wedLunVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="wedDinvegNon1" [(ngModel)]="wedDinvegNon1" form="wedDinvegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "wedDinvegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -322,21 +352,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "thuBrVegNon1" [(ngModel)]="thuBrVegNon1" form="thuBrVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "thuBrVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "thuLunVegNon1" [(ngModel)]="thuLunVegNon1" form="thuLunVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "thuLunVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="thuDinvegNon1" [(ngModel)]="thuDinvegNon1" form="thuDinvegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "thuDinvegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -348,21 +381,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "friBrVegNon1" [(ngModel)]="friBrVegNon1" form="friBrVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "friBrVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "friLunVegNon1" [(ngModel)]="friLunVegNon1" form="friLunVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "friLunVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="friDinvegNon1" [(ngModel)]="friDinvegNon1" form="friDinvegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "friDinvegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -374,21 +410,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "satBrVegNon1" [(ngModel)]="satBrVegNon1" form="satBrVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "satBrVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "satLunVegNon1" [(ngModel)]="satLunVegNon1" form="satLunVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "satLunVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name="satDinvegNon1" [(ngModel)]="satDinvegNon1" form="satDinvegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "satDinvegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
@@ -400,21 +439,24 @@
                   <p>BreakFast</p>
                   <mat-radio-group name = "sunBrVegNon1" [(ngModel)]="sunBrVegNon1" form="sunBrVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "sunBrVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Lunch</p>
                   <mat-radio-group name = "sunLunVegNon1" [(ngModel)]="sunLunVegNon1" form="sunLunVegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "sunLunVegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4">
                   <p>Dinner</p>
                   <mat-radio-group name = "sunDinvegNon1" [(ngModel)]="sunDinvegNon1" form="sunDinvegNon1">
                     <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
-                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "sunDinvegNon1 = undefined">&otimes; clear </a>
                   </mat-radio-group>
                 </div>
               </div><br>
