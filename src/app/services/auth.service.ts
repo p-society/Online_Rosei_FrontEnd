@@ -134,7 +134,7 @@ export class AuthService {
   resetPassword(data) {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('http://localhost:3000/user/forgotPassword/', data, {headers: headers})
+    return this.http.post('https://topaz-ceiling.glitch.me/user/forgotPassword/', data, {headers: headers})
     .map(res => res.json())
   }
 

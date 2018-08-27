@@ -49,8 +49,14 @@ export class AdminMessDownComponent implements OnInit {
             for (this.i ; this.i<=index; this.i++) {
               this.messDown[index].cost = val[0];
               this.messDown[index].index = index + 1;
+              if (this.messDown[index].cost === 0) {
+                (this.messDown[index]) = undefined
+              }
             }
           })
+
+          this.messDown = this.messDown.filter((n) => { return n !== undefined })
+
         } else {
           this.message = data.message
         }

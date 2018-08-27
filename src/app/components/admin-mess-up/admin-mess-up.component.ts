@@ -50,8 +50,14 @@ export class AdminMessUpComponent implements OnInit {
             for (this.i ; this.i<=index; this.i++) {
               this.messUp[index].cost = val[0];
               this.messUp[index].index = index + 1;
+              if (this.messUp[index].cost === 0) {
+                (this.messUp[index]) = undefined
+              }
             }
           })
+
+          this.messUp = this.messUp.filter((n) => { return n !== undefined })
+          
         } else {
           this.message = data.message
         }
