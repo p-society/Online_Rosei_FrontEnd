@@ -33,6 +33,7 @@ import { ActivateEmailComponent } from './components/activate-email/activate-ema
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { EditCouponsComponent, DialogComponentEdit } from './components/edit-coupons/edit-coupons.component';
 
 const appRoutes: Routes = [
   { path : '' , component : HomeComponent},
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
   { path : 'profile' , component : ProfileComponent, canActivate: [AuthGuard]},
   { path : 'setting' , component : SettingComponent , canActivate: [AuthGuard]},
   { path : 'bookCoupon' , component : MessBookComponent , canActivate: [AuthGuard]},
+  { path : 'editCoupon' , component : EditCouponsComponent , canActivate: [AuthGuard]},
   { path : 'adminMess1' , component : AdminMessDownComponent , canActivate: [AuthGuard]},
   { path : 'adminMess1Users' , component : AdminMessDownUsersComponent , canActivate: [AuthGuard]},
   { path : 'adminMess1UsersTotal' , component : AdminMessDownTotalComponent , canActivate: [AuthGuard]},
@@ -75,7 +77,9 @@ const appRoutes: Routes = [
     AdminMessUpTotalComponent,
     ActivateEmailComponent,
     ForgotPasswordComponent,
-    HomeComponent
+    HomeComponent,
+    EditCouponsComponent,
+    DialogComponentEdit
   ],
   imports: [
     BrowserModule,
@@ -101,6 +105,6 @@ const appRoutes: Routes = [
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
-  entryComponents:[DialogComponent]
+  entryComponents:[DialogComponent, DialogComponentEdit]
 })
 export class AppModule { }

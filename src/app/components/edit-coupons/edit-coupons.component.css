@@ -1,0 +1,28 @@
+.jumbotron {
+  background-color: #343a40 !important;
+}
+
+.cardColour{
+  color: white;
+}
+
+
+.example-panel-red {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.undo {
+  cursor: pointer;
+  color: red !important;
+  font-size: 18px !important;
+}

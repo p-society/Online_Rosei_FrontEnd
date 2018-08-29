@@ -11,7 +11,7 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
 })
 export class LoginComponent implements OnInit {
 
-  email: string
+  collegeId: string
   password: string
 
   constructor(
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   onLoginSubmit() {
     this.spinnerService.show()
     const user = {
-      email : this.email,
+      collegeId : this.collegeId,
       password : this.password
     }
   this.authService.authenticateUser(user).subscribe(data => {

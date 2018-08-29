@@ -1,0 +1,489 @@
+<div class="container">
+  <div class="row" *ngIf="messUp && messDown">
+    <div class="col-xs-12 col-md-12">
+
+      <form (submit)="bookCoupon()" id="vegNon">
+        <mat-accordion class="example-headers-align">
+
+          <!-- see menu -->
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Menu (Both Mess)
+              </mat-panel-title>
+              <mat-panel-description>
+                Press this to see menu
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="row">
+              <h3 style="color:white;">Ground Floor mess menu</h3>
+              <img src="https://user-images.githubusercontent.com/24803604/44617066-106f3480-a87a-11e8-882b-8e7d5bb205ee.jpeg" alt="" class="img-fluid">
+            </div>
+            <div class="row">
+              <h3 style="color:white;">First Floor mess menu</h3>
+              <img src="https://user-images.githubusercontent.com/24803604/44617088-912e3080-a87a-11e8-8219-333564479dad.jpeg" alt="" class="img-fluid">
+            </div>
+          </mat-expansion-panel><br><br>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mess 1 (Ground Floor)
+              </mat-panel-title>
+              <mat-panel-description>
+                Press this to toggle
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- Ground Floor Mess -->
+            <div class="jumbotron">
+              <!-- Monday -->
+              <h4 style="color:white;">Monday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                    <mat-radio-group [(ngModel)]="messDown[0].breakfast" name = "messDown[0].breakfast"  form="messDown[0].breakfast" id="messDown[0].breakfast" [disabled]="messUp[0].breakfast === '***'? undefined : messUp[0].breakfast">
+                      <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                      <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                      <a class="undo" (click)= "messDown[0].breakfast = undefined">&otimes; clear </a>
+                    </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messDown[0].lunch" [(ngModel)]="messDown[0].lunch" form="messDown[0].lunch" [disabled]="messUp[0].lunch === '***'? undefined : messUp[0].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[0].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messDown[0].dinner" [(ngModel)]="messDown[0].dinner" form="messDown[0].dinner" [disabled]="messUp[0].dinner === '***'? undefined : messUp[0].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[0].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Tuesday -->
+              <h4 style="color:white;">Tuesday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messDown[1].breakfast" [(ngModel)]="messDown[1].breakfast" form="messDown[1].breakfast" [disabled]="messUp[1].breakfast === '***'? undefined : messUp[1].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[1].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messDown[1].lunch" [(ngModel)]="messDown[1].lunch" form="messDown[1].lunch" [disabled]="messUp[1].lunch === '***'? undefined : messUp[1].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[1].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messDown[1].dinner" [(ngModel)]="messDown[1].dinner" form="messDown[1].dinner" [disabled]="messUp[1].dinner === '***'? undefined : messUp[1].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[1].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Wednesday -->
+              <h4 style="color:white;">Wednesday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messDown[2].breakfast" [(ngModel)]="messDown[2].breakfast" form="messDown[2].breakfast" [disabled]="messUp[2].breakfast === '***'? undefined : messUp[2].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[2].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messDown[2].lunch" [(ngModel)]="messDown[2].lunch" form="messDown[2].lunch" [disabled]="messUp[2].lunch === '***'? undefined : messUp[2].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[2].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messDown[2].dinner" [(ngModel)]="messDown[2].dinner" form="messDown[2].dinner" [disabled]="messUp[2].dinner === '***'? undefined : messUp[2].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[2].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Thursday -->
+              <h4 style="color:white;">Thursday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messDown[3].breakfast" [(ngModel)]="messDown[3].breakfast" form="messDown[3].breakfast" [disabled]="messUp[3].breakfast === '***'? undefined : messUp[3].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[3].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messDown[3].lunch" [(ngModel)]="messDown[3].lunch" form="messDown[3].lunch" [disabled]="messUp[3].lunch === '***'? undefined : messUp[3].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[3].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messDown[3].dinner" [(ngModel)]="messDown[3].dinner" form="messDown[3].dinner" [disabled]="messUp[3].dinner === '***'? undefined : messUp[3].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[3].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Friday -->
+              <h4 style="color:white;">Friday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messDown[4].breakfast" [(ngModel)]="messDown[4].breakfast" form="messDown[4].breakfast" [disabled]="messUp[4].breakfast === '***'? undefined : messUp[4].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[4].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messDown[4].lunch" [(ngModel)]="messDown[4].lunch" form="messDown[4].lunch" [disabled]="messUp[4].lunch === '***'? undefined : messUp[4].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[4].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messDown[4].dinner" [(ngModel)]="messDown[4].dinner" form="messDown[4].dinner" [disabled]="messUp[4].dinner === '***'? undefined : messUp[4].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[4].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Saturday -->
+              <h4 style="color:white;">Saturday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messDown[5].breakfast" [(ngModel)]="messDown[5].breakfast" form="messDown[5].breakfast" [disabled]="messUp[5].breakfast === '***'? undefined : messUp[5].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[5].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messDown[5].lunch" [(ngModel)]="messDown[5].lunch" form="messDown[5].lunch" [disabled]="messUp[5].lunch === '***'? undefined : messUp[5].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[5].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messDown[5].dinner" [(ngModel)]="messDown[5].dinner" form="messDown[5].dinner" [disabled]="messUp[5].dinner === '***'? undefined : messUp[5].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[5].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Sunday -->
+              <h4 style="color:white;">Sunday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messDown[6].breakfast" [(ngModel)]="messDown[6].breakfast" form="messDown[6].breakfast" [disabled]="messUp[6].breakfast === '***'? undefined : messUp[6].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[6].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messDown[6].lunch" [(ngModel)]="messDown[6].lunch" form="messDown[6].lunch" [disabled]="messUp[6].lunch === '***'? undefined : messUp[6].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[6].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name = "messDown[6].dinner" [(ngModel)]="messDown[6].dinner" form="messDown[6].dinner" [disabled]="messUp[6].dinner === '***'? undefined : messUp[6].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messDown[6].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+            </div>
+          </mat-expansion-panel>
+
+          <br><br>
+          <mat-expansion-panel >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Mess 2 (First floor)
+              </mat-panel-title>
+              <mat-panel-description>
+                Press this to toggle
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- 1st Floor Mess -->
+            <div class="jumbotron">
+              <!-- Monday -->
+              <h4 style="color:white;">Monday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                    <mat-radio-group [(ngModel)]="messUp[0].breakfast" name = "messUp[0].breakfast"  form="messUp[0].breakfast" [disabled]="messDown[0].breakfast === '***'? undefined : messDown[0].breakfast">
+                      <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                      <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                      <a class="undo" (click)= "messUp[0].breakfast = undefined;">&otimes; clear </a>
+                    </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messUp[0].lunch" [(ngModel)]="messUp[0].lunch" form="messUp[0].lunch" [disabled]="messDown[0].lunch === '***'? undefined : messDown[0].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[0].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messUp[0].dinner" [(ngModel)]="messUp[0].dinner" form="messUp[0].dinner" [disabled]="messDown[0].dinner === '***'? undefined : messDown[0].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[0].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Tuesday -->
+              <h4 style="color:white;">Tuesday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messUp[1].breakfast" [(ngModel)]="messUp[1].breakfast" form="messUp[1].breakfast" [disabled]="messDown[1].breakfast === '***'? undefined : messDown[1].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[1].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messUp[1].lunch" [(ngModel)]="messUp[1].lunch" form="messUp[1].lunch" [disabled]="messDown[1].lunch === '***'? undefined : messDown[1].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[1].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messUp[1].dinner" [(ngModel)]="messUp[1].dinner" form="messUp[1].dinner" [disabled]="messDown[1].dinner === '***'? undefined : messDown[1].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[1].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Wednesday -->
+              <h4 style="color:white;">Wednesday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messUp[2].breakfast" [(ngModel)]="messUp[2].breakfast" form="messUp[2].breakfast" [disabled]="messDown[2].breakfast === '***'? undefined : messDown[2].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[2].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messUp[2].lunch" [(ngModel)]="messUp[2].lunch" form="messUp[2].lunch" [disabled]="messDown[2].lunch === '***'? undefined : messDown[2].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[2].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messUp[2].dinner" [(ngModel)]="messUp[2].dinner" form="messUp[2].dinner" [disabled]="messDown[2].dinner === '***'? undefined : messDown[2].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[2].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Thursday -->
+              <h4 style="color:white;">Thursday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messUp[3].breakfast" [(ngModel)]="messUp[3].breakfast" form="messUp[3].breakfast" [disabled]="messDown[3].breakfast === '***'? undefined : messDown[3].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[3].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messUp[3].lunch" [(ngModel)]="messUp[3].lunch" form="messUp[3].lunch" [disabled]="messDown[3].lunch === '***'? undefined : messDown[3].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[3].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messUp[3].dinner" [(ngModel)]="messUp[3].dinner" form="messUp[3].dinner" [disabled]="messDown[3].dinner === '***'? undefined : messDown[3].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[3].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Friday -->
+              <h4 style="color:white;">Friday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messUp[4].breakfast" [(ngModel)]="messUp[4].breakfast" form="messUp[4].breakfast" [disabled]="messDown[4].breakfast === '***'? undefined : messDown[4].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[4].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messUp[4].lunch" [(ngModel)]="messUp[4].lunch" form="messUp[4].lunch" [disabled]="messDown[4].lunch === '***'? undefined : messDown[4].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[4].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messUp[4].dinner" [(ngModel)]="messUp[4].dinner" form="messUp[4].dinner" [disabled]="messDown[4].dinner === '***'? undefined : messDown[4].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[4].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Saturday -->
+              <h4 style="color:white;">Saturday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messUp[5].breakfast" [(ngModel)]="messUp[5].breakfast" form="messUp[5].breakfast" [disabled]="messDown[5].breakfast === '***'? undefined : messDown[5].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[5].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messUp[5].lunch" [(ngModel)]="messUp[5].lunch" form="messUp[5].lunch" [disabled]="messDown[5].lunch === '***'? undefined : messDown[5].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[5].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name="messUp[5].dinner" [(ngModel)]="messUp[5].dinner" form="messUp[5].dinner" [disabled]="messDown[5].dinner === '***'? undefined : messDown[5].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[5].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+              <!-- Sunday -->
+              <h4 style="color:white;">Sunday</h4>
+              <div class="row" *ngIf="messUp && messDown">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>BreakFast</p>
+                  <mat-radio-group name = "messUp[6].breakfast" [(ngModel)]="messUp[6].breakfast" form="messUp[6].breakfast" [disabled]="messDown[6].breakfast === '***'? undefined : messDown[6].breakfast">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[6].breakfast = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Lunch</p>
+                  <mat-radio-group name = "messUp[6].lunch" [(ngModel)]="messUp[6].lunch" form="messUp[6].lunch" [disabled]="messDown[6].lunch === '***'? undefined : messDown[6].lunch">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[6].lunch = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                  <p>Dinner</p>
+                  <mat-radio-group name = "messUp[6].dinner" [(ngModel)]="messUp[6].dinner" form="messUp[6].dinner" [disabled]="messDown[6].dinner === '***'? undefined : messDown[6].dinner">
+                    <mat-radio-button class="example-margin" value="veg">veg</mat-radio-button><br>
+                    <mat-radio-button class="example-margin" value="nonVeg">non Veg</mat-radio-button><br>
+                    <a class="undo" (click)= "messUp[6].dinner = undefined">&otimes; clear </a>
+                  </mat-radio-group>
+                </div>
+              </div><br>
+
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br><br>
+        <input type="submit" name="submitButton" #submitButton class="btn btn-success" value="Edit coupon">
+      </form>
+    </div>
+  </div>
+  <div class="row" *ngIf="!messUp && !messDown">
+    <div class="jumbotron">
+      <div class="col-12">
+        <mat-card>
+          <mat-card-header>
+
+          </mat-card-header>
+          <mat-card-content>
+            <h1 class="cardColour text-center">To edit you need to book coupon first</h1>
+          </mat-card-content>
+          <mat-card-actions class="text-center">
+            <a mat-raised-button color="primary" href="bookCoupon">Book Coupon</a>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

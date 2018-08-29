@@ -10,56 +10,21 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner'
 import {FlashMessagesService} from 'angular2-flash-messages'
 
 @Component({
-  selector: 'app-mess-book',
-  templateUrl: './mess-book.component.html',
-  styleUrls: ['./mess-book.component.css']
+  selector: 'app-edit-coupons',
+  templateUrl: './edit-coupons.component.html',
+  styleUrls: ['./edit-coupons.component.css']
 })
-export class MessBookComponent implements OnInit {
+export class EditCouponsComponent implements OnInit {
   @ViewChild('submitButton') submitButton:ElementRef;
-  monBrVegNon : String;
-  monLunVegNon : String;
-  monDinvegNon: String;
-  tuesBrVegNon: String;
-  tuesLunVegNon: String;
-  tuesDinvegNon: String;
-  wedBrVegNon: String;
-  wedLunVegNon: String;
-  wedDinvegNon: String;
-  thuBrVegNon: String;
-  thuLunVegNon: String;
-  thuDinvegNon: String;
-  friBrVegNon: String;
-  friLunVegNon: String
-  friDinvegNon: String;
-  satBrVegNon: String;
-  satLunVegNon: String;
-  satDinvegNon: String;
-  sunBrVegNon: String;
-  sunLunVegNon: String;
-  sunDinvegNon: String;
 
-  // 1st floor mess1
-  monBrVegNon1 : String;
-  monLunVegNon1 : String;
-  monDinvegNon1: String;
-  tuesBrVegNon1: String;
-  tuesLunVegNon1: String;
-  tuesDinvegNon1: String;
-  wedBrVegNon1: String;
-  wedLunVegNon1: String;
-  wedDinvegNon1: String;
-  thuBrVegNon1: String;
-  thuLunVegNon1: String;
-  thuDinvegNon1: String;
-  friBrVegNon1: String;
-  friLunVegNon1: String
-  friDinvegNon1: String;
-  satBrVegNon1: String;
-  satLunVegNon1: String;
-  satDinvegNon1: String;
-  sunBrVegNon1: String;
-  sunLunVegNon1: String;
-  sunDinvegNon1: String;
+  user: Object
+  couponData: Object
+  messDown: any;
+  messUp: any;
+  costDown: any;
+  costUp: any;
+  message: string;
+  bookedDate: string;
 
   BreakFastValue: number;
   LunchValue: number;
@@ -79,10 +44,15 @@ export class MessBookComponent implements OnInit {
   // checking when page is loaded
   ngOnInit() {
     this.authService.getCoupon().subscribe(data => {
-      if(data.data.success) {
-        this.flashMessage.show("Coupon already booked for this week", {cssClass: 'alert-danger', timeout: 5000})
-        this.router.navigate(['/profile'])
-      }
+        if (data.data.success) {
+          this.messDown= data.data.bookedCouponDown.messdown
+          this.messUp = data.data.bookedCouponUp.messup
+          this.costDown = this.messDown.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+          this.costUp = this.messUp.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+          this.bookedDate = data.data.bookedCouponUp.createdAt || data.data.bookedCouponDown.createdAt;
+        } else {
+          this.message = data.message
+        }
     })
 
     const Info =this.authService.loadUserInfo();
@@ -103,62 +73,62 @@ export class MessBookComponent implements OnInit {
     // mess 1
       arrMess1.push({
         breakfast: {
-          monBrVegNon: this.monBrVegNon,
-          tuesBrVegNon: this.tuesBrVegNon,
-          wedBrVegNon: this.wedBrVegNon,
-          thuBrVegNon: this.thuBrVegNon,
-          friBrVegNon: this.friBrVegNon,
-          satBrVegNon: this.satBrVegNon,
-          sunBrVegNon: this.sunBrVegNon
+          monBrVegNon: this.messDown[0].breakfast,
+          tuesBrVegNon: this.messDown[1].breakfast,
+          wedBrVegNon: this.messDown[2].breakfast,
+          thuBrVegNon: this.messDown[3].breakfast,
+          friBrVegNon: this.messDown[4].breakfast,
+          satBrVegNon: this.messDown[5].breakfast,
+          sunBrVegNon: this.messDown[6].breakfast
         },
         lunch: {
-          monLunVegNon: this.monLunVegNon,
-          tuesLunVegNon: this.tuesLunVegNon,
-          wedLunVegNon: this.wedLunVegNon,
-          thuLunVegNon: this.thuLunVegNon,
-          friLunVegNon: this.friLunVegNon,
-          satLunVegNon: this.satLunVegNon,
-          sunLunVegNon: this.sunLunVegNon
+          monLunVegNon: this.messDown[0].lunch,
+          tuesLunVegNon: this.messDown[1].lunch,
+          wedLunVegNon: this.messDown[2].lunch,
+          thuLunVegNon: this.messDown[3].lunch,
+          friLunVegNon: this.messDown[4].lunch,
+          satLunVegNon: this.messDown[5].lunch,
+          sunLunVegNon: this.messDown[6].lunch
         },
         dinner: {
-          monDinvegNon: this.monDinvegNon,
-          tuesDinVegNon: this.tuesDinvegNon,
-          wedDinvegNon: this.wedDinvegNon,
-          thuDinvegNon: this.thuDinvegNon,
-          friDinvegNon: this.friDinvegNon,
-          satDinvegNon: this.satDinvegNon,
-          sunDinvegNon: this.sunDinvegNon
+          monDinvegNon: this.messDown[0].dinner,
+          tuesDinVegNon: this.messDown[1].dinner,
+          wedDinvegNon: this.messDown[2].dinner,
+          thuDinvegNon: this.messDown[3].dinner,
+          friDinvegNon: this.messDown[4].dinner,
+          satDinvegNon: this.messDown[5].dinner,
+          sunDinvegNon: this.messDown[6].dinner
         }
       });
 
       // mess 2
       arrMess2.push({
         breakfast: {
-          monBrVegNon: this.monBrVegNon1,
-          tuesBrVegNon: this.tuesBrVegNon1,
-          wedBrVegNon: this.wedBrVegNon1,
-          thuBrVegNon: this.thuBrVegNon1,
-          friBrVegNon: this.friBrVegNon1,
-          satBrVegNon: this.satBrVegNon1,
-          sunBrVegNon: this.sunBrVegNon1
+          monBrVegNon: this.messUp[0].breakfast,
+          tuesBrVegNon: this.messUp[1].breakfast,
+          wedBrVegNon: this.messUp[2].breakfast,
+          thuBrVegNon: this.messUp[3].breakfast,
+          friBrVegNon: this.messUp[4].breakfast,
+          satBrVegNon: this.messUp[5].breakfast,
+          sunBrVegNon: this.messUp[6].breakfast
         },
         lunch: {
-          monLunVegNon: this.monLunVegNon1,
-          tuesLunVegNon: this.tuesLunVegNon1,
-          wedLunVegNon: this.wedLunVegNon1,
-          thuLunVegNon: this.thuLunVegNon1,
-          friLunVegNon: this.friLunVegNon1,
-          satLunVegNon: this.satLunVegNon1,
-          sunLunVegNon: this.sunLunVegNon1
+          monLunVegNon: this.messUp[0].lunch,
+          tuesLunVegNon: this.messUp[1].lunch,
+          wedLunVegNon: this.messUp[2].lunch,
+          thuLunVegNon: this.messUp[3].lunch,
+          friLunVegNon: this.messUp[4].lunch,
+          satLunVegNon: this.messUp[5].lunch,
+          sunLunVegNon: this.messUp[6].lunch
         },
         dinner: {
-          monDinvegNon: this.monDinvegNon1,
-          tuesDinVegNon: this.tuesDinvegNon1,
-          wedDinvegNon: this.wedDinvegNon1,
-          thuDinvegNon: this.thuDinvegNon1,
-          friDinvegNon: this.friDinvegNon1,
-          satDinvegNon: this.satDinvegNon1,
-          sunDinvegNon: this.sunDinvegNon1
+          monDinvegNon: this.messUp[0].dinner,
+          tuesDinVegNon: this.messUp[1].dinner,
+          wedDinvegNon: this.messUp[2].dinner,
+          thuDinvegNon: this.messUp[3].dinner,
+          friDinvegNon: this.messUp[4].dinner,
+          satDinvegNon: this.messUp[5].dinner,
+          sunDinvegNon: this.messUp[6].dinner
         }
       });
 
@@ -374,7 +344,7 @@ export class MessBookComponent implements OnInit {
         }
     }
 
-    let dialogRef = this.dialog.open(DialogComponent, {
+    let dialogRef = this.dialog.open(DialogComponentEdit, {
       width: '900px',
       data: body
     });
@@ -385,7 +355,7 @@ export class MessBookComponent implements OnInit {
     this.submitButton.nativeElement.disabled = true;
       if (this.checkBody(body)) {
         if(result) {
-        this.authService.bookCoupon(body).subscribe(data=>{
+        this.authService.editCoupon(body).subscribe(data=>{
           if (data.data.success === false ) {
             this.flashMessage.show(data.message, {cssClass: 'alert-danger', timeout: 5000})
             this.spinnerService.hide()
@@ -410,6 +380,7 @@ export class MessBookComponent implements OnInit {
   }
 
   checkBody(body) {
+    console.log(body)
     if ((Object.keys(body.mess1.breakfastMess1).length === 0 && body.mess1.breakfastMess1.constructor === Object) &&
         (Object.keys(body.mess1.lunchMess1).length === 0 && body.mess1.lunchMess1.constructor === Object) &&
         (Object.keys(body.mess1.dinnerMess1).length === 0 && body.mess1.dinnerMess1.constructor === Object) &&
@@ -423,7 +394,6 @@ export class MessBookComponent implements OnInit {
       }
   }
 }
-
 
 export interface MessElement {
   day: string;
@@ -439,13 +409,13 @@ export interface MessElement {
   templateUrl: 'dialog-component.html',
   styleUrls: ['dialog-component.css']
 })
-export class DialogComponent {
+export class DialogComponentEdit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any) {
     }
 
-    ELEMENT_DATA1: MessElement[] = [
+    DATA1_EDIT: MessElement[] = [
       { day: 'Monday',
         breakfast: this.data.mess1.breakfastMess1.Monday ? this.data.mess1.breakfastMess1.Monday.val : undefined,
         lunch: this.data.mess1.lunchMess1.Monday ? this.data.mess1.lunchMess1.Monday.val : undefined,
@@ -491,7 +461,7 @@ export class DialogComponent {
     ]
 
     // MESS 2 DATA
-    ELEMENT_DATA2: MessElement[] = [
+    DATA2_EDIT: MessElement[] = [
       { day: 'Monday',
         breakfast: this.data.mess2.breakfastMess2.Monday ? this.data.mess2.breakfastMess2.Monday.val : undefined,
         lunch: this.data.mess2.lunchMess2.Monday ? this.data.mess2.lunchMess2.Monday.val : undefined,
@@ -538,40 +508,33 @@ export class DialogComponent {
 
     checkCost(val1, val2, val3) {
       if (val1 === undefined && val2 === undefined && val3 === undefined) {
-        return 0
-      }
-      else if (val1 === undefined && val2 === undefined) {
-        return val3.cost
-      }
-      else if (val2 === undefined && val3 === undefined) {
-        return val1.cost
-      }
-      else if (val3 === undefined && val1 === undefined) {
-        return val2.cost
-      }
-      else if (val1 === undefined) {
-        return val2.cost + val3.cost
-      }
-      else if(val2 === undefined) {
-        return val1.cost + val3.cost
-      }
-      else if(val3 === undefined) {
-        return val1.cost + val2.cost
-      }
-      else {
-        return val1.cost + val2.cost + val3.cost
+        return 0;
+      } else if (val1 === undefined && val2 === undefined) {
+        return val3.cost;
+      } else if (val2 === undefined && val3 === undefined) {
+        return val1.cost;
+      } else if (val3 === undefined && val1 === undefined) {
+        return val2.cost;
+      } else if (val1 === undefined) {
+        return val2.cost + val3.cost;
+      } else if (val2 === undefined) {
+        return val1.cost + val3.cost;
+      } else if (val3 === undefined) {
+        return val1.cost + val2.cost;
+      } else {
+        return val1.cost + val2.cost + val3.cost;
       }
     }
 
     getTotalCostMess1() {
-      return this.ELEMENT_DATA1.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+      return this.DATA1_EDIT.map(t => t.cost).reduce((acc, value) => acc + value, 0);
     }
 
     getTotalCostMess2() {
-      return this.ELEMENT_DATA2.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+      return this.DATA2_EDIT.map(t => t.cost).reduce((acc, value) => acc + value, 0);
     }
 
     displayedColumns: string[] = ['day','breakfast', 'lunch', 'dinner', 'cost'];
-    dataSource1 = this.ELEMENT_DATA1;
-    dataSource2 = this.ELEMENT_DATA2;
+    dataSource1 = this.DATA1_EDIT;
+    dataSource2 = this.DATA2_EDIT;
 }

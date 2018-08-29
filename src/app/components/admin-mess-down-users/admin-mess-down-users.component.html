@@ -10,41 +10,58 @@
     </mat-expansion-panel-header>
 
     <div *ngIf="messDown">
-    <button mat-flat-button color="warn" (click)="print()">Print Coupons</button>
-    <br><br>
-    <div id="print-section">
-    <!-- Ground Floor Mess -->
+      <button mat-flat-button color="warn" (click)="print()">Print Coupons</button>
+      <br><br>
+      <div id="print-section">
+        <!-- Ground Floor Mess -->
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <ngx-masonry>
-            <ngxMasonryItem class="brick" *ngFor="let val of messDown">
-              <table style="color:black; width:100%;" class="jumbotron">
-                <tr class="test">
-                  <th>Day</th>
-                  <th>BreakFast</th>
-                  <th>Lunch</th>
-                  <th>Dinner</th>
-                </tr><br><br>
-                <tr>
-                  <div *ngFor="let result of val.couponDownMess">
-                    <tr *ngFor="let final of result.messdown">
-                      <td>{{final.day}}</td>
-                      <td>{{final.breakfast}}</td>
-                      <td>{{final.lunch}}</td>
-                      <td>{{final.dinner}}</td>
-                    </tr>
-                  </div>
-                  <strong>Mess 1(ground floor)</strong>
-                  <span> {{val.collegeId}}  <strong>Total:-</strong> {{val.cost}} <strong>{{val.name}}</strong></span>
-                </tr>
-              </table><br>
-              <hr>
-            </ngxMasonryItem>
-          </ngx-masonry>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <ngx-masonry>
+              <ngxMasonryItem class="brick" *ngFor="let val of messDown">
+                <table style="color:black; width:100%;" class="jumbotron">
+                  <tr class="test">
+                    <th>Day</th>
+                    <th>BreakFast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                  </tr><br><br>
+                  <tr>
+                    <div *ngFor="let result of val.couponDownMess">
+                      <tr *ngFor="let final of result.messdown">
+                        <td>{{final.day}}</td>
+                        <span *ngIf="final.breakfast">
+                        <td>{{final.breakfast}}</td>
+                      </span>
+                        <span *ngIf="!final.breakfast">
+                        <td>***</td>
+                      </span>
+                        <span *ngIf="final.lunch">
+                        <td>{{final.lunch}}</td>
+                      </span>
+                        <span *ngIf="!final.lunch">
+                        <td>***</td>
+                      </span>
+                        <span *ngIf="final.dinner">
+                        <td>{{final.dinner}}</td>
+                      </span>
+                        <span *ngIf="!final.dinner">
+                        <td>***</td>
+                      </span>
+                      </tr>
+                    </div>
+                    <strong>Mess 1(ground floor)</strong>
+                    <span> {{val.collegeId}}  <strong>Total:-</strong> {{val.cost}}</span><br>
+                    <strong>{{val.name}}</strong>
+                  </tr>
+                </table>
+                <hr>
+                <br>
+              </ngxMasonryItem>
+            </ngx-masonry>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <!-- if no coupon-->
     <div *ngIf="message">
