@@ -48,7 +48,10 @@ export class AdminMessUpUsersComponent implements OnInit {
         if (data.data.success) {
           this.displayedColumns = ['day', 'breakfast', 'lunch', 'dinner'];
           this.messUp = data.data.users;
+<<<<<<< HEAD
           // tslint:disable-next-line:no-shadowed-variable
+=======
+>>>>>>> added edit coupon feature
           this.costUp = this.messUp.map(t => t.couponUpMess.map(val => val.messup.map(t => t.cost).reduce((acc, value) => acc + value, 0)));
           this.days = this.messUp.map(t => t.couponUpMess.map(val => val.messup));
           this.costUp.forEach((val, index) => {
@@ -60,7 +63,13 @@ export class AdminMessUpUsersComponent implements OnInit {
               }
             }
           });
+<<<<<<< HEAD
           this.messUp = this.messUp.filter((n) => n !== undefined);
+=======
+
+          this.messUp = this.messUp.filter((n) => { return n !== undefined });
+
+>>>>>>> added edit coupon feature
         } else {
           this.message = data.message;
         }
@@ -69,6 +78,7 @@ export class AdminMessUpUsersComponent implements OnInit {
   }
 
   print() {
+<<<<<<< HEAD
     const divToPrint = document.getElementById('print-section');
     let htmlToPrint = '' +
       '<style type="text/css">' +
@@ -84,6 +94,19 @@ export class AdminMessUpUsersComponent implements OnInit {
       '</style>';
     htmlToPrint += divToPrint.outerHTML;
     const newWin = window.open('');
+=======
+    var divToPrint = document.getElementById('print-section');
+    var htmlToPrint = '' +
+      '<style type="text/css">' +
+      'table {' +
+      'border:1px solid #000;' +
+      'padding:0px;' +
+      'width: auto;' +
+      '}' +
+      '</style>';
+    htmlToPrint += divToPrint.outerHTML;
+    var newWin = window.open('');
+>>>>>>> added edit coupon feature
     newWin.document.write(htmlToPrint);
     newWin.print();
     newWin.close();

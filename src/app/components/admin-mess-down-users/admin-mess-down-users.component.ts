@@ -82,6 +82,7 @@ export class AdminMessDownUsersComponent implements OnInit {
     var htmlToPrint = '' +
       '<style type="text/css">' +
       'table {' +
+<<<<<<< HEAD
       'border:5px solid #000;' +
       'padding:0px;' +
       'width: 100% !important;' +
@@ -89,6 +90,11 @@ export class AdminMessDownUsersComponent implements OnInit {
       'td{' +
       'border:1px solid #000;' +
       'width: 100% !important;' +
+=======
+      'border:1px solid #000;' +
+      'padding:0px;' +
+      'width: auto;' +
+>>>>>>> added edit coupon feature
       '}' +
       '</style>';
     htmlToPrint += divToPrint.outerHTML;

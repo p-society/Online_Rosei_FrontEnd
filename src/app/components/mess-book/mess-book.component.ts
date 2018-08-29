@@ -445,7 +445,102 @@ export class DialogComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any) {
+<<<<<<< HEAD
   }
+=======
+    }
+
+    ELEMENT_DATA1: MessElement[] = [
+      { day: 'Monday',
+        breakfast: this.data.mess1.breakfastMess1.Monday ? this.data.mess1.breakfastMess1.Monday.val : undefined,
+        lunch: this.data.mess1.lunchMess1.Monday ? this.data.mess1.lunchMess1.Monday.val : undefined,
+        dinner: this.data.mess1.dinnerMess1.Monday ? this.data.mess1.dinnerMess1.Monday.val : undefined,
+        cost: this.checkCost(this.data.mess1.breakfastMess1.Monday, this.data.mess1.lunchMess1.Monday, this.data.mess1.dinnerMess1.Monday)
+     },
+     { day: 'Tuesday',
+       breakfast: this.data.mess1.breakfastMess1.Tuesday ? this.data.mess1.breakfastMess1.Tuesday.val : undefined,
+       lunch: this.data.mess1.lunchMess1.Tuesday ? this.data.mess1.lunchMess1.Tuesday.val : undefined,
+       dinner: this.data.mess1.dinnerMess1.Tuesday ? this.data.mess1.dinnerMess1.Tuesday.val : undefined,
+       cost: this.checkCost(this.data.mess1.breakfastMess1.Tuesday, this.data.mess1.lunchMess1.Tuesday, this.data.mess1.dinnerMess1.Tuesday)
+     },
+     { day: 'Wednesday',
+       breakfast: this.data.mess1.breakfastMess1.Wednesday ? this.data.mess1.breakfastMess1.Wednesday.val : undefined,
+       lunch: this.data.mess1.lunchMess1.Wednesday ? this.data.mess1.lunchMess1.Wednesday.val : undefined,
+       dinner: this.data.mess1.dinnerMess1.Wednesday ? this.data.mess1.dinnerMess1.Wednesday.val : undefined,
+       cost: this.checkCost(this.data.mess1.breakfastMess1.Wednesday, this.data.mess1.lunchMess1.Wednesday, this.data.mess1.dinnerMess1.Wednesday)
+     },
+     { day: 'Thursday',
+       breakfast: this.data.mess1.breakfastMess1.Thursday ? this.data.mess1.breakfastMess1.Thursday.val : undefined,
+       lunch: this.data.mess1.lunchMess1.Thursday ? this.data.mess1.lunchMess1.Thursday.val : undefined,
+       dinner: this.data.mess1.dinnerMess1.Thursday ? this.data.mess1.dinnerMess1.Thursday.val : undefined,
+       cost: this.checkCost(this.data.mess1.breakfastMess1.Thursday, this.data.mess1.lunchMess1.Thursday, this.data.mess1.dinnerMess1.Thursday)
+     },
+     { day: 'Friday',
+       breakfast: this.data.mess1.breakfastMess1.Friday ? this.data.mess1.breakfastMess1.Friday.val : undefined,
+       lunch: this.data.mess1.lunchMess1.Friday ? this.data.mess1.lunchMess1.Friday.val : undefined,
+       dinner: this.data.mess1.dinnerMess1.Friday ? this.data.mess1.dinnerMess1.Friday.val : undefined,
+       cost: this.checkCost(this.data.mess1.breakfastMess1.Friday, this.data.mess1.lunchMess1.Friday, this.data.mess1.dinnerMess1.Friday)
+     },
+     { day: 'Saturday',
+       breakfast: this.data.mess1.breakfastMess1.Saturday ? this.data.mess1.breakfastMess1.Saturday.val : undefined,
+       lunch: this.data.mess1.lunchMess1.Saturday ? this.data.mess1.lunchMess1.Saturday.val : undefined,
+       dinner: this.data.mess1.dinnerMess1.Saturday ? this.data.mess1.dinnerMess1.Saturday.val : undefined,
+       cost: this.checkCost(this.data.mess1.breakfastMess1.Saturday, this.data.mess1.lunchMess1.Saturday, this.data.mess1.dinnerMess1.Saturday)
+     },
+     { day: 'Sunday',
+       breakfast: this.data.mess1.breakfastMess1.Sunday ? this.data.mess1.breakfastMess1.Sunday.val : undefined,
+       lunch: this.data.mess1.lunchMess1.Sunday ? this.data.mess1.lunchMess1.Sunday.val : undefined,
+       dinner: this.data.mess1.dinnerMess1.Sunday ? this.data.mess1.dinnerMess1.Sunday.val : undefined,
+       cost: this.checkCost(this.data.mess1.breakfastMess1.Sunday, this.data.mess1.lunchMess1.Sunday, this.data.mess1.dinnerMess1.Sunday)
+     }
+    ]
+
+    // MESS 2 DATA
+    ELEMENT_DATA2: MessElement[] = [
+      { day: 'Monday',
+        breakfast: this.data.mess2.breakfastMess2.Monday ? this.data.mess2.breakfastMess2.Monday.val : undefined,
+        lunch: this.data.mess2.lunchMess2.Monday ? this.data.mess2.lunchMess2.Monday.val : undefined,
+        dinner: this.data.mess2.dinnerMess2.Monday ? this.data.mess2.dinnerMess2.Monday.val : undefined,
+        cost: this.checkCost(this.data.mess2.breakfastMess2.Monday, this.data.mess2.lunchMess2.Monday, this.data.mess2.dinnerMess2.Monday)
+     },
+     { day: 'Tuesday',
+       breakfast: this.data.mess2.breakfastMess2.Tuesday ? this.data.mess2.breakfastMess2.Tuesday.val : undefined,
+       lunch: this.data.mess2.lunchMess2.Tuesday ? this.data.mess2.lunchMess2.Tuesday.val : undefined,
+       dinner: this.data.mess2.dinnerMess2.Tuesday ? this.data.mess2.dinnerMess2.Tuesday.val : undefined,
+       cost: this.checkCost(this.data.mess2.breakfastMess2.Tuesday, this.data.mess2.lunchMess2.Tuesday, this.data.mess2.dinnerMess2.Tuesday)
+     },
+     { day: 'Wednesday',
+       breakfast: this.data.mess2.breakfastMess2.Wednesday ? this.data.mess2.breakfastMess2.Wednesday.val : undefined,
+       lunch: this.data.mess2.lunchMess2.Wednesday ? this.data.mess2.lunchMess2.Wednesday.val : undefined,
+       dinner: this.data.mess2.dinnerMess2.Wednesday ? this.data.mess2.dinnerMess2.Wednesday.val : undefined,
+       cost: this.checkCost(this.data.mess2.breakfastMess2.Wednesday, this.data.mess2.lunchMess2.Wednesday, this.data.mess2.dinnerMess2.Wednesday)
+     },
+     { day: 'Thursday',
+       breakfast: this.data.mess2.breakfastMess2.Thursday ? this.data.mess2.breakfastMess2.Thursday.val : undefined,
+       lunch: this.data.mess2.lunchMess2.Thursday ? this.data.mess2.lunchMess2.Thursday.val : undefined,
+       dinner: this.data.mess2.dinnerMess2.Thursday ? this.data.mess2.dinnerMess2.Thursday.val : undefined,
+       cost: this.checkCost(this.data.mess2.breakfastMess2.Thursday, this.data.mess2.lunchMess2.Thursday, this.data.mess2.dinnerMess2.Thursday)
+     },
+     { day: 'Friday',
+       breakfast: this.data.mess2.breakfastMess2.Friday ? this.data.mess2.breakfastMess2.Friday.val : undefined,
+       lunch: this.data.mess2.lunchMess2.Friday ? this.data.mess2.lunchMess2.Friday.val : undefined,
+       dinner: this.data.mess2.dinnerMess2.Friday ? this.data.mess2.dinnerMess2.Friday.val : undefined,
+       cost: this.checkCost(this.data.mess2.breakfastMess2.Friday, this.data.mess2.lunchMess2.Friday, this.data.mess2.dinnerMess2.Friday)
+     },
+     { day: 'Saturday',
+       breakfast: this.data.mess2.breakfastMess2.Saturday ? this.data.mess2.breakfastMess2.Saturday.val : undefined,
+       lunch: this.data.mess2.lunchMess2.Saturday ? this.data.mess2.lunchMess2.Saturday.val : undefined,
+       dinner: this.data.mess2.dinnerMess2.Saturday ? this.data.mess2.dinnerMess2.Saturday.val : undefined,
+       cost: this.checkCost(this.data.mess2.breakfastMess2.Saturday, this.data.mess2.lunchMess2.Saturday, this.data.mess2.dinnerMess2.Saturday)
+     },
+     { day: 'Sunday',
+       breakfast: this.data.mess2.breakfastMess2.Sunday ? this.data.mess2.breakfastMess2.Sunday.val : undefined,
+       lunch: this.data.mess2.lunchMess2.Sunday ? this.data.mess2.lunchMess2.Sunday.val : undefined,
+       dinner: this.data.mess2.dinnerMess2.Sunday ? this.data.mess2.dinnerMess2.Sunday.val : undefined,
+       cost: this.checkCost(this.data.mess2.breakfastMess2.Sunday, this.data.mess2.lunchMess2.Sunday, this.data.mess2.dinnerMess2.Sunday)
+     }
+    ]
+>>>>>>> added edit coupon feature
 
   ELEMENT_DATA1: MessElement[] = [
     {
