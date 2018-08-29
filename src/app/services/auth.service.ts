@@ -131,6 +131,17 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  //edit coupons
+  editCoupon(data) {
+    const headers = new Headers()
+    this.loadToken()
+    const userId = this.loadUserInfo()._id
+    headers.append('x-access-token', this.authToken)
+    headers.append('Content-Type', 'application/json')
+    return this.http.post('https://topaz-ceiling.glitch.me/book/editCoupon/'+ userId, data, {headers: headers})
+    .map(res => res.json())
+  }
+
   // activation email
 
   sendActivationEmail(data) {
