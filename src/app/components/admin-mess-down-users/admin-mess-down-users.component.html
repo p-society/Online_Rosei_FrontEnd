@@ -28,6 +28,7 @@
                   </tr><br><br>
                   <tr>
                     <div *ngFor="let result of val.couponDownMess">
+                      <strong>{{result.createdAt}} -- {{result.createdTill}}</strong>
                       <tr *ngFor="let final of result.messdown">
                         <td>{{final.day}}</td>
                         <span *ngIf="final.breakfast">
@@ -52,7 +53,6 @@
                     </div>
                     <strong>Mess 1(ground floor)</strong>
                     <span> {{val.collegeId}}  <strong>Total:-</strong> {{val.cost}}</span><br>
-                    <strong>{{val.name}}</strong>
                   </tr>
                 </table>
                 <hr>
