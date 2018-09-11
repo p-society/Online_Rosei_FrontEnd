@@ -103,10 +103,12 @@ export class AdminMessDownTotalComponent implements OnInit {
           // BreakFast Veg
           // tslint:disable-next-line:no-shadowed-variable
           // tslint:disable-next-line:max-line-length
+          // tslint:disable-next-line:no-shadowed-variable
           this.monBrVegCounter = this.messDown.map(t => t.couponDownMess.map(val => val.messdown.map((t, index) => (t.day === 'Monday' && t.breakfast)).filter(val => val === 'veg')[0])).
             filter(val => val[0] === 'veg').length;
 
           // tslint:disable-next-line:max-line-length
+          // tslint:disable-next-line:no-shadowed-variable
           this.tuesBrVegCounter = this.messDown.map(t => t.couponDownMess.map(val => val.messdown.map((t, index) => (t.day === 'Tuesday' && t.breakfast)).filter(val => val === 'veg')[0])).
             filter(val => val[0] === 'veg').length;
 

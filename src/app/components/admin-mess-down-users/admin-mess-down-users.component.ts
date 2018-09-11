@@ -25,14 +25,7 @@ export class AdminMessDownUsersComponent implements OnInit {
   message: any;
   i: any;
   days: any;
-  bricks = [
-    { title: 'Brick 1' },
-    { title: 'Brick 2' },
-    { title: 'Brick 3' },
-    { title: 'Brick 4' },
-    { title: 'Brick 5' },
-    { title: 'Brick 6' }
-  ];
+
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -83,7 +76,7 @@ export class AdminMessDownUsersComponent implements OnInit {
                   const year = (val.couponDownMess[0].createdAt).slice(6);
                   const temp = moment([Number(year), Number(month), Number(date)]).utcOffset('+05:30').add(0, 'days').format('DD-MM-YYYY');
 
-                  result.day = result.day.slice(0, 3) + '/' + temp.slice(0, 2);
+                  result.day = result.day.slice(0, 3) + '/' + temp.slice(0, 2) + '/' + temp.slice(3, 5);
                   break;
                 case 'Tuesday':
                   const date1 = (val.couponDownMess[0].createdAt).slice(0, 2);
@@ -92,7 +85,7 @@ export class AdminMessDownUsersComponent implements OnInit {
                   // tslint:disable-next-line:max-line-length
                   const temp1 = moment([Number(year1), Number(month1), Number(date1)]).utcOffset('+05:30').add(1, 'days').format('DD-MM-YYYY');
 
-                  result.day = result.day.slice(0, 3) + '/' + temp1.slice(0, 2);
+                  result.day = result.day.slice(0, 3) + '/' + temp1.slice(0, 2) + '/' + temp1.slice(3, 5);
                   break;
                 case 'Wednesday':
                   const date2 = (val.couponDownMess[0].createdAt).slice(0, 2);
@@ -101,7 +94,7 @@ export class AdminMessDownUsersComponent implements OnInit {
                   // tslint:disable-next-line:max-line-length
                   const temp2 = moment([Number(year2), Number(month2), Number(date2)]).utcOffset('+05:30').add(2, 'days').format('DD-MM-YYYY');
 
-                  result.day = result.day.slice(0, 3) + '/' + temp2.slice(0, 2);
+                  result.day = result.day.slice(0, 3) + '/' + temp2.slice(0, 2) + '/' + temp2.slice(3, 5);
                   break;
                 case 'Thursday':
                   const date3 = (val.couponDownMess[0].createdAt).slice(0, 2);
@@ -110,7 +103,7 @@ export class AdminMessDownUsersComponent implements OnInit {
                   // tslint:disable-next-line:max-line-length
                   const temp3 = moment([Number(year3), Number(month3), Number(date3)]).utcOffset('+05:30').add(3, 'days').format('DD-MM-YYYY');
 
-                  result.day = result.day.slice(0, 3) + '/' + temp3.slice(0, 2);
+                  result.day = result.day.slice(0, 3) + '/' + temp3.slice(0, 2) + '/' + temp3.slice(3, 5);
                   break;
                 case 'Friday':
                   const date4 = (val.couponDownMess[0].createdAt).slice(0, 2);
@@ -119,7 +112,7 @@ export class AdminMessDownUsersComponent implements OnInit {
                   // tslint:disable-next-line:max-line-length
                   const temp4 = moment([Number(year4), Number(month4), Number(date4)]).utcOffset('+05:30').add(4, 'days').format('DD-MM-YYYY');
 
-                  result.day = result.day.slice(0, 3) + '/' + temp4.slice(0, 2);
+                  result.day = result.day.slice(0, 3) + '/' + temp4.slice(0, 2) + '/' + temp4.slice(3, 5);
                   break;
                 case 'Saturday':
                   const date5 = (val.couponDownMess[0].createdAt).slice(0, 2);
@@ -128,7 +121,7 @@ export class AdminMessDownUsersComponent implements OnInit {
                   // tslint:disable-next-line:max-line-length
                   const temp5 = moment([Number(year5), Number(month5), Number(date5)]).utcOffset('+05:30').add(5, 'days').format('DD-MM-YYYY');
 
-                  result.day = result.day.slice(0, 3) + '/' + temp5.slice(0, 2);
+                  result.day = result.day.slice(0, 3) + '/' + temp5.slice(0, 2) + '/' + temp5.slice(3, 5);
                   break;
 
                 case 'Sunday':
@@ -138,7 +131,7 @@ export class AdminMessDownUsersComponent implements OnInit {
                   // tslint:disable-next-line:max-line-length
                   const temp6 = moment([Number(year6), Number(month6), Number(date6)]).utcOffset('+05:30').add(6, 'days').format('DD-MM-YYYY');
 
-                  result.day = result.day.slice(0, 3) + '/' + temp6.slice(0, 2);
+                  result.day = result.day.slice(0, 3) + '/' + temp6.slice(0, 2) + '/' + temp6.slice(3, 5);
                   break;
               }
             });
@@ -152,18 +145,27 @@ export class AdminMessDownUsersComponent implements OnInit {
   }
 
   print() {
-    const divToPrint = document.getElementById('print-section');
+    const divToPrint = document.getElementById('print-section1');
     let htmlToPrint = '' +
       '<style type="text/css">' +
-      'table {' +
+      'ngxMasonryItem {' +
+      'display: table;' +
+      'width:50%;' +
+      '}' +
+      '#messDownTable {' +
       'border:5px solid #000;' +
       'padding:0px;' +
-      'width: 100% !important;' +
+      'text-align:center;' +
+      'width: 10% !important;' +
+      'page-break-inside:auto;' +
       '}' +
-      'td{' +
+      'td {' +
       'border:1px solid #000;' +
-      'width: 100% !important;' +
+      'width: 17.5% !important;' +
       '}' +
+      'tr {' +
+      'page-break-inside: avoid; ' +
+      'page-break-after: auto }' +
       '</style>';
     htmlToPrint += divToPrint.outerHTML;
     const newWin = window.open('');

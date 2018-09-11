@@ -12,56 +12,51 @@
     <div *ngIf="messUp">
       <button mat-flat-button color="warn" (click)="print()">Print Coupons</button>
       <br><br>
-      <div id="print-section">
-        <!-- Ground Floor Mess -->
 
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12">
-            <ngx-masonry>
-              <ngxMasonryItem class="brick" *ngFor="let val of messUp">
-                <table style="color:black; width:100%;" class="jumbotron">
-                  <tr class="test">
-                    <th>Day</th>
-                    <th>BreakFast</th>
-                    <th>Lunch</th>
-                    <th>Dinner</th>
-                  </tr><br><br>
-                  <tr>
-                    <div *ngFor="let result of val.couponUpMess">
-                      <strong>{{result.createdAt}} -- {{result.createdTill}}</strong>
-                      <tr *ngFor="let final of result.messup">
-                        <td>{{final.day}}</td>
-                        <span *ngIf="final.breakfast">
+      <!-- Ground Floor Mess -->
+      <ngx-masonry>
+        <div id="print-section">
+          <ngxMasonryItem class="brick" *ngFor="let val of messUp">
+            <table style="color:black; width:100% !important;" id="messUpTable">
+              <tr class="test">
+                <th>Day</th>
+                <th>BreakFast</th>
+                <th>Lunch</th>
+                <th>Dinner</th>
+              </tr><br><br>
+              <tr>
+                <div *ngFor="let result of val.couponUpMess">
+                  <strong style="font-size:21px;">{{val.name}}</strong>
+              <tr *ngFor="let final of result.messup">
+                <td><strong>{{final.day}}</strong></td>
+                <span *ngIf="final.breakfast">
                         <td>{{final.breakfast}}</td>
                       </span>
-                        <span *ngIf="!final.breakfast">
+                <span *ngIf="!final.breakfast">
                         <td>***</td>
                       </span>
-                        <span *ngIf="final.lunch">
+                <span *ngIf="final.lunch">
                         <td>{{final.lunch}}</td>
                       </span>
-                        <span *ngIf="!final.lunch">
+                <span *ngIf="!final.lunch">
                         <td>***</td>
                       </span>
-                        <span *ngIf="final.dinner">
+                <span *ngIf="final.dinner">
                         <td>{{final.dinner}}</td>
                       </span>
-                        <span *ngIf="!final.dinner">
+                <span *ngIf="!final.dinner">
                         <td>***</td>
                       </span>
-                      </tr>
-                    </div>
-                    <strong>Mess 2(1st)</strong>
-                    <span> {{val.collegeId}}({{val.gender.slice(0,1).toUpperCase()}})  <strong>Total:-</strong> {{val.cost}}</span><br>
-                  </tr>
-                </table>
-                <hr>
-                <br>
-              </ngxMasonryItem>
-            </ngx-masonry>
-          </div>
+              </tr>
         </div>
-      </div>
+        <strong style="font-size:21px;">Mess 2(1st)</strong>
+        <span style="font-size:21px;"> {{val.collegeId}}({{val.gender.slice(0,1).toUpperCase()}})  <strong>Total:-</strong> {{val.cost}} Rs</span><br>
+        </tr>
+        </table>
+        <br><br>
+        </ngxMasonryItem>
+    </div>
+    </ngx-masonry>
     </div>
     <!-- if no coupon-->
     <div *ngIf="message">
