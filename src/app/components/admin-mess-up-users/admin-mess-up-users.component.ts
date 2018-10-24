@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DataSource } from '@angular/cdk/table';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatGridListModule } from '@angular/material/grid-list';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-admin-mess-up-users',
@@ -61,6 +62,77 @@ export class AdminMessUpUsersComponent implements OnInit {
             }
           });
           this.messUp = this.messUp.filter((n) => n !== undefined);
+
+          this.messUp.forEach((val, index) => {
+            val.couponUpMess[0].messup.forEach((result, item) => {
+              switch (result.day) {
+                case 'Monday':
+                  const date = (val.couponUpMess[0].createdAt).slice(0, 2);
+                  const month = Number((val.couponUpMess[0].createdAt).slice(3, 5)) - Number(1);
+                  const year = (val.couponUpMess[0].createdAt).slice(6);
+                  const temp = moment([Number(year), Number(month), Number(date)]).utcOffset('+05:30').add(0, 'days').format('DD-MM-YYYY');
+
+                  result.day = result.day.slice(0, 3) + '/' + temp.slice(0, 2);
+                  break;
+                case 'Tuesday':
+                  const date1 = (val.couponUpMess[0].createdAt).slice(0, 2);
+                  const month1 = Number((val.couponUpMess[0].createdAt).slice(3, 5)) - Number(1);
+                  const year1 = (val.couponUpMess[0].createdAt).slice(6);
+                  // tslint:disable-next-line:max-line-length
+                  const temp1 = moment([Number(year1), Number(month1), Number(date1)]).utcOffset('+05:30').add(1, 'days').format('DD-MM-YYYY');
+
+                  result.day = result.day.slice(0, 3) + '/' + temp1.slice(0, 2);
+                  break;
+                case 'Wednesday':
+                  const date2 = (val.couponUpMess[0].createdAt).slice(0, 2);
+                  const month2 = Number((val.couponUpMess[0].createdAt).slice(3, 5)) - Number(1);
+                  const year2 = (val.couponUpMess[0].createdAt).slice(6);
+                  // tslint:disable-next-line:max-line-length
+                  const temp2 = moment([Number(year2), Number(month2), Number(date2)]).utcOffset('+05:30').add(2, 'days').format('DD-MM-YYYY');
+
+                  result.day = result.day.slice(0, 3) + '/' + temp2.slice(0, 2);
+                  break;
+                case 'Thursday':
+                  const date3 = (val.couponUpMess[0].createdAt).slice(0, 2);
+                  const month3 = Number((val.couponUpMess[0].createdAt).slice(3, 5)) - Number(1);
+                  const year3 = (val.couponUpMess[0].createdAt).slice(6);
+                  // tslint:disable-next-line:max-line-length
+                  const temp3 = moment([Number(year3), Number(month3), Number(date3)]).utcOffset('+05:30').add(3, 'days').format('DD-MM-YYYY');
+
+                  result.day = result.day.slice(0, 3) + '/' + temp3.slice(0, 2);
+                  break;
+                case 'Friday':
+                  const date4 = (val.couponUpMess[0].createdAt).slice(0, 2);
+                  const month4 = Number((val.couponUpMess[0].createdAt).slice(3, 5)) - Number(1);
+                  const year4 = (val.couponUpMess[0].createdAt).slice(6);
+                  // tslint:disable-next-line:max-line-length
+                  const temp4 = moment([Number(year4), Number(month4), Number(date4)]).utcOffset('+05:30').add(4, 'days').format('DD-MM-YYYY');
+
+                  result.day = result.day.slice(0, 3) + '/' + temp4.slice(0, 2);
+                  break;
+                case 'Saturday':
+                  const date5 = (val.couponUpMess[0].createdAt).slice(0, 2);
+                  const month5 = Number((val.couponUpMess[0].createdAt).slice(3, 5)) - Number(1);
+                  const year5 = (val.couponUpMess[0].createdAt).slice(6);
+                  // tslint:disable-next-line:max-line-length
+                  const temp5 = moment([Number(year5), Number(month5), Number(date5)]).utcOffset('+05:30').add(5, 'days').format('DD-MM-YYYY');
+
+                  result.day = result.day.slice(0, 3) + '/' + temp5.slice(0, 2);
+                  break;
+
+                case 'Sunday':
+                  const date6 = (val.couponUpMess[0].createdAt).slice(0, 2);
+                  const month6 = Number((val.couponUpMess[0].createdAt).slice(3, 5)) - Number(1);
+                  const year6 = (val.couponUpMess[0].createdAt).slice(6);
+                  // tslint:disable-next-line:max-line-length
+                  const temp6 = moment([Number(year6), Number(month6), Number(date6)]).utcOffset('+05:30').add(6, 'days').format('DD-MM-YYYY');
+
+                  result.day = result.day.slice(0, 3) + '/' + temp6.slice(0, 2);
+                  break;
+              }
+            });
+          });
+
         } else {
           this.message = data.message;
         }
